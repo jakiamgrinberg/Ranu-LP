@@ -1,0 +1,17 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/index.html",                                          "destination": "/",                                                  "permanent": true },
+    { "source": "/o-que-e-ranu.html",                                   "destination": "/o-que-e-ranu",                                      "permanent": true },
+    { "source": "/blog/index.html",                                     "destination": "/blog",                                              "permanent": true },
+    { "source": "/blog/treinador-de-corrida-com-ia.html",               "destination": "/blog/treinador-de-corrida-com-ia",                  "permanent": true },
+    { "source": "/blog/comecar-a-correr-do-zero-guia-iniciantes.html",  "destination": "/blog/comecar-a-correr-do-zero-guia-iniciantes",     "permanent": true },
+    { "source": "/blog/plano-corrida-meia-maratona-12-semanas.html",    "destination": "/blog/plano-corrida-meia-maratona-12-semanas",       "permanent": true },
+    { "source": "/blog/treino-polarizado-80-20-corrida.html",           "destination": "/blog/treino-polarizado-80-20-corrida",              "permanent": true },
+    { "source": "/blog/zonas-frequencia-cardiaca-corrida.html",         "destination": "/blog/zonas-frequencia-cardiaca-corrida",            "permanent": true },
+    { "source": "/blog/como-usar-strava-para-melhorar-corrida.html",    "destination": "/blog/como-usar-strava-para-melhorar-corrida",       "permanent": true },
+    { "source": "/privacidade.html",                                    "destination": "/privacidade",                                       "permanent": true },
+    { "source": "/termos.html",                                         "destination": "/termos",                                            "permanent": true }
+  ]
+}
