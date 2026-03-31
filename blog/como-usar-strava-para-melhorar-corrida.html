@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Como Usar o Strava para Melhorar sua Corrida (Além do GPS) | Ranü</title>
+<meta name="description" content="O Strava vai muito além do GPS. Saiba quais métricas analisar após cada corrida, o que é Fitness and Freshness e como integrar seus dados com um treinador de IA.">
+<link rel="canonical" href="https://ranu.app/blog/como-usar-strava-para-melhorar-corrida">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ranu.app/blog/como-usar-strava-para-melhorar-corrida">
+<meta property="og:title" content="Como Usar o Strava para Melhorar sua Corrida (Além do GPS)">
+<meta property="og:description" content="As métricas que a maioria dos corredores ignora no Strava e como usar os dados para evoluir de verdade.">
+<meta property="og:image" content="https://ranu.app/assets/og-blog-strava.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Como Usar o Strava para Melhorar sua Corrida">
+<meta name="twitter:description" content="Vá além do mapa e do pace médio. As métricas do Strava que realmente importam para sua evolução.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Como Usar o Strava para Melhorar sua Corrida (Além do GPS)",
+  "description": "O Strava vai muito além do GPS. Saiba quais métricas analisar após cada corrida e como integrar seus dados com um treinador de IA.",
+  "author": { "@type": "Organization", "name": "Ranü" },
+  "publisher": { "@type": "Organization", "name": "Ranü", "url": "https://ranu.app" },
+  "datePublished": "2026-03-27",
+  "dateModified": "2026-03-27",
+  "url": "https://ranu.app/blog/como-usar-strava-para-melhorar-corrida"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Preciso do Strava Premium para aproveitar os dados de treino?",
+      "acceptedAnswer": { "@type": "Answer", "text": "As métricas básicas (pace, distância, FC média, cadência, elevação) estão disponíveis na versão gratuita. O Strava Premium adiciona Fitness and Freshness (forma e frescor), análise de potência para ciclismo e segmentos ilimitados. Para corredores, a versão gratuita já oferece dados suficientes para análise de treino." }
+    },
+    {
+      "@type": "Question",
+      "name": "O que é o Suffer Score do Strava e como interpretar?",
+      "acceptedAnswer": { "@type": "Answer", "text": "O Suffer Score é uma pontuação de carga cardiovascular baseada no tempo passado em cada zona de FC. Um treino de recuperação leve fica em torno de 20-40; um intervalado intenso pode passar de 150. Use como referência de carga relativa, não como meta absoluta." }
+    },
+    {
+      "@type": "Question",
+      "name": "Como o Strava calcula as zonas de frequência cardíaca?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Por padrão, o Strava usa a fórmula 220 menos a idade para estimar a FCmax e divide as zonas em 5 faixas percentuais. Você pode (e deve) personalizar esses valores nas configurações de perfil usando a FCmax real, medida em teste de campo ou calculada pela fórmula de Tanaka." }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferença entre cadência e pace no Strava?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pace mede a velocidade (minutos por km). Cadência mede o número de passos por minuto. Cadência ideal para corrida eficiente fica entre 170-180 passos/min. Se sua cadência está abaixo de 165, você provavelmente está dando passadas muito longas, o que aumenta o impacto articular." }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --green: #94CA55; --green-dark: #7ab342; --green-glow: rgba(148, 202, 85, 0.12); --green-subtle: rgba(148, 202, 85, 0.06); --bg: #0a0a0a; --bg-card: #111111; --bg-card-alt: #161616; --border: #1e1e1e; --border-light: #2a2a2a; --text: #e0e0e0; --text-muted: #888888; --text-heading: #ffffff; --radius: 12px; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.75; font-size: 17px; -webkit-font-smoothing: antialiased; }
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { display: flex; align-items: center; text-decoration: none; }
+  .nav-logo-icon { height: 32px; width: auto; }
+  .nav-cta { background: var(--green); color: #000; font-size: 13px; font-weight: 600; padding: 8px 20px; border-radius: 8px; text-decoration: none; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--green-dark); }
+  .hero { max-width: 720px; margin: 0 auto; padding: 80px 24px 48px; text-align: center; }
+  .hero-badge { display: inline-block; background: var(--green-glow); color: var(--green); font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 20px; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 24px; border: 1px solid rgba(148, 202, 85, 0.15); }
+  .hero h1 { font-size: clamp(28px, 5vw, 42px); font-weight: 800; color: var(--text-heading); line-height: 1.2; margin-bottom: 20px; letter-spacing: -0.5px; }
+  .hero-sub { font-size: 18px; color: var(--text-muted); line-height: 1.6; max-width: 560px; margin: 0 auto; }
+  article { max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+  article h2 { font-size: 26px; font-weight: 700; color: var(--text-heading); margin: 56px 0 20px; letter-spacing: -0.3px; }
+  article h3 { font-size: 20px; font-weight: 600; color: var(--text-heading); margin: 36px 0 12px; }
+  article p { margin-bottom: 20px; color: var(--text); }
+  article strong { color: var(--text-heading); font-weight: 600; }
+  .intro { font-size: 19px; color: var(--text); border-left: 3px solid var(--green); padding-left: 20px; margin-bottom: 32px; }
+  .feature-list { display: flex; flex-direction: column; gap: 16px; margin: 24px 0 32px; }
+  .feature-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: border-color 0.2s; }
+  .feature-item:hover { border-color: var(--border-light); }
+  .feature-number { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: var(--green-glow); color: var(--green); font-size: 14px; font-weight: 700; border-radius: 8px; margin-bottom: 12px; border: 1px solid rgba(148, 202, 85, 0.15); }
+  .feature-item h3 { margin: 0 0 8px; font-size: 17px; }
+  .feature-item p { margin: 0; font-size: 15px; color: var(--text-muted); line-height: 1.65; }
+  .metric-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; margin-bottom: 12px; display: flex; gap: 16px; align-items: flex-start; }
+  .metric-icon { width: 40px; height: 40px; min-width: 40px; background: var(--green-glow); border: 1px solid rgba(148,202,85,0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+  .metric-icon svg { width: 20px; height: 20px; stroke: var(--green); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .metric-body h3 { font-size: 16px; font-weight: 600; color: var(--text-heading); margin-bottom: 4px; }
+  .metric-body p { font-size: 14px; color: var(--text-muted); margin: 0; line-height: 1.6; }
+  .highlight-quote { background: var(--green-subtle); border-left: 3px solid var(--green); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 28px 0; font-size: 17px; color: var(--text-heading); font-weight: 500; line-height: 1.6; }
+  .table-wrapper { overflow-x: auto; margin: 24px 0 32px; border-radius: var(--radius); border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 400px; }
+  thead { background: var(--bg-card); }
+  th { padding: 14px 16px; text-align: left; font-weight: 600; color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--border); }
+  th.highlight { color: var(--green); background: var(--green-subtle); }
+  td { padding: 14px 16px; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: top; }
+  td:first-child { font-weight: 500; color: var(--text-heading); }
+  td.highlight { background: var(--green-subtle); }
+  tr:last-child td { border-bottom: none; }
+  .cta-section { background: linear-gradient(135deg, rgba(148, 202, 85, 0.08) 0%, rgba(148, 202, 85, 0.02) 100%); border: 1px solid rgba(148, 202, 85, 0.15); border-radius: 16px; padding: 48px 32px; text-align: center; margin: 48px 0; }
+  .cta-section h2 { font-size: 24px; margin: 0 0 12px; color: var(--text-heading); }
+  .cta-section p { color: var(--text-muted); font-size: 16px; margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .cta-features { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+  .cta-feat { font-size: 14px; color: var(--text); display: flex; align-items: center; gap: 6px; }
+  .cta-feat .dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; }
+  .cta-button { display: inline-block; background: var(--green); color: #000; font-size: 16px; font-weight: 700; padding: 14px 36px; border-radius: 10px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+  .cta-button:hover { background: var(--green-dark); transform: translateY(-1px); }
+  .cta-sub { font-size: 13px; color: var(--text-muted); margin-top: 12px; }
+  .faq { margin: 48px 0 32px; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-item:first-child { border-top: 1px solid var(--border); }
+  .faq-q { font-size: 16px; font-weight: 600; color: var(--text-heading); margin-bottom: 8px; }
+  .faq-a { font-size: 15px; color: var(--text-muted); line-height: 1.65; }
+  .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--green); z-index: 101; width: 0%; transition: width 0.1s; }
+  footer { max-width: 720px; margin: 0 auto; padding: 24px 24px 48px; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border); }
+  .internal-link { color: var(--green); text-decoration: none; border-bottom: 1px solid rgba(148,202,85,0.3); transition: border-color 0.2s; }
+  .internal-link:hover { border-color: var(--green); }
+  @media (max-width: 640px) { .hero { padding: 48px 20px 32px; } article { padding: 0 20px 48px; } .cta-section { padding: 32px 20px; } .cta-features { flex-direction: column; align-items: center; gap: 12px; } .metric-card { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav>
+  <a href="../index.html" class="nav-logo"><img src="../assets/Logo-01.png" alt="Ranü" class="nav-logo-icon"></a>
+  <a href="../index.html" class="nav-cta">Começar grátis</a>
+</nav>
+
+<div class="hero">
+  <span class="hero-badge">Ferramentas de treino</span>
+  <h1>Como Usar o Strava para Melhorar sua Corrida (Além do Mapa e do Pace)</h1>
+  <p class="hero-sub">A maioria dos corredores usa o Strava para registrar km e ver o mapa. Mas o app guarda muito mais. Saiba quais métricas analisar e como usá-las para evoluir de verdade.</p>
+</div>
+
+<article>
+
+  <p class="intro">
+    O Strava registrou sua corrida. Você viu o mapa, curtiu algumas atividades de amigos e fechou o app. Mas sua corrida está cheia de dados que você não leu. FC média, distribuição de zonas, cadência, Suffer Score, variação de pace por km. Cada número conta uma história sobre como seu corpo respondeu ao treino.
+  </p>
+
+  <h2>O que o Strava realmente mede</h2>
+
+  <p>O Strava coleta dados do seu GPS watch (Garmin, Apple Watch, Polar, Suunto) via sincronização automática. As métricas disponíveis dependem dos sensores do seu dispositivo:</p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th>Métrica</th><th>Sensor necessário</th><th class="highlight">O que revela</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Pace e distância</td><td>GPS</td><td class="highlight">Velocidade e volume da corrida</td></tr>
+        <tr><td>Frequência cardíaca</td><td>Monitor de FC (pulso ou cinta)</td><td class="highlight">Intensidade real do esforço por zona</td></tr>
+        <tr><td>Cadência</td><td>Acelerômetro do watch</td><td class="highlight">Eficiência da passada</td></tr>
+        <tr><td>Elevação</td><td>GPS + barômetro</td><td class="highlight">Carga adicional em subidas</td></tr>
+        <tr><td>Temperatura</td><td>Sensor do watch (modelos premium)</td><td class="highlight">Impacto do calor na FC</td></tr>
+        <tr><td>Potência de corrida</td><td>Sensor dedicado ou algoritmo</td><td class="highlight">Esforço absoluto independente do terreno</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>As métricas que a maioria dos corredores ignora</h2>
+
+  <div class="metric-card">
+    <div class="metric-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" fill="rgba(148,202,85,0.3)" stroke="var(--green)"/></svg></div>
+    <div class="metric-body">
+      <h3>Distribuição de zonas de FC</h3>
+      <p>Mostra quanto tempo você passou em cada zona durante a corrida. Depois de um easy run, você deveria ver 80-90% do tempo em Z1/Z2. Se aparecer muito Z3 num treino que deveria ser fácil, você correu no ritmo errado. Leia mais sobre <a href="/blog/zonas-frequencia-cardiaca-corrida" class="internal-link">zonas de frequência cardíaca</a>.</p>
+    </div>
+  </div>
+
+  <div class="metric-card">
+    <div class="metric-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+    <div class="metric-body">
+      <h3>Cadência (passos por minuto)</h3>
+      <p>Cadência ideal para corrida eficiente: 170-180 passos/min. Se a sua está abaixo de 165, você provavelmente está dando passadas longas demais. Isso aumenta o impacto no joelho e no quadril. Aumentar a cadência em 5-10% reduz esse impacto sem mudar o pace.</p>
+    </div>
+  </div>
+
+  <div class="metric-card">
+    <div class="metric-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+    <div class="metric-body">
+      <h3>Pace por km (splits)</h3>
+      <p>A variação de pace ao longo da corrida revela sua estratégia e consistência. Em um easy run, o pace deve ser quase constante. Em uma corrida de prova, splits negativos (segunda metade mais rápida que a primeira) indicam boa administração de esforço.</p>
+    </div>
+  </div>
+
+  <div class="metric-card">
+    <div class="metric-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="rgba(148,202,85,0.3)" stroke="var(--green)"/></svg></div>
+    <div class="metric-body">
+      <h3>Suffer Score</h3>
+      <p>Pontuação de carga cardiovascular baseada no tempo em zona. Treino de recuperação: 20-50. Easy run longo: 50-90. Intervalado intenso: 100-200+. Use como referência comparativa ao longo das semanas, não como meta a bater.</p>
+    </div>
+  </div>
+
+  <div class="metric-card">
+    <div class="metric-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+    <div class="metric-body">
+      <h3>FC média vs. pace médio</h3>
+      <p>Esse par é o indicador mais poderoso de evolução aeróbica. Se depois de 8 semanas você consegue correr no mesmo pace com FC 5-8bpm menor, seu condicionamento aeróbico melhorou de verdade. Seu coração está fazendo o mesmo trabalho com menos esforço.</p>
+    </div>
+  </div>
+
+  <h2>Fitness and Freshness: o painel que muda tudo</h2>
+
+  <p>O recurso mais valioso do Strava para planejar treinos é o Fitness and Freshness (disponível no Strava Premium). Ele mostra três métricas calculadas automaticamente a partir do seu histórico:</p>
+
+  <div class="feature-list">
+    <div class="feature-item">
+      <div class="feature-number">F</div>
+      <h3>Fitness (Forma)</h3>
+      <p>Acumulação de carga de treino ao longo de 42 dias. Sobe quando você treina consistentemente, cai quando descansa por muitos dias. Um número crescente ao longo de um ciclo de preparação é sinal de que você está construindo forma.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-number">F</div>
+      <h3>Fatigue (Fadiga)</h3>
+      <p>Carga de treino acumulada nos últimos 7 dias. Alta fadiga depois de uma semana de volume elevado é normal e esperada. Fadiga cronicamente alta sem descanso é sinal de overtraining iminente.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-number">Fr</div>
+      <h3>Freshness (Frescor)</h3>
+      <p>Fitness menos Fadiga. Número positivo e crescente próximo à prova significa que você está descansado e em forma: o objetivo do taper. Número muito negativo indica que você está sobrecarregado.</p>
+    </div>
+  </div>
+
+  <div class="highlight-quote">
+    A leitura ideal para um dia de prova: Fitness alto, Fadiga baixa, Freshness positivo e crescendo. É o estado que uma preparação bem estruturada deve gerar na semana da competição.
+  </div>
+
+  <h2>Como configurar suas zonas de FC no Strava</h2>
+
+  <p>Por padrão, o Strava usa a fórmula "220 menos a idade" para calcular a FCmax e define as zonas automaticamente. Essa fórmula tem erro de 10-12 bpm. Para dados precisos, configure manualmente:</p>
+
+  <ol style="margin: 20px 0 32px; padding-left: 24px; display: flex; flex-direction: column; gap: 12px;">
+    <li style="color: var(--text); font-size: 16px; padding-left: 8px;">Acesse Configurações no Strava web ou app</li>
+    <li style="color: var(--text); font-size: 16px; padding-left: 8px;">Vá em "Zonas de Frequência Cardíaca"</li>
+    <li style="color: var(--text); font-size: 16px; padding-left: 8px;">Insira sua FCmax real (calculada pela <a href="/blog/zonas-frequencia-cardiaca-corrida" class="internal-link">fórmula de Tanaka</a> ou medida em teste de campo)</li>
+    <li style="color: var(--text); font-size: 16px; padding-left: 8px;">O Strava vai recalcular os limites de cada zona com base no seu valor</li>
+  </ol>
+
+  <p>Com as zonas corretas, a distribuição mostrada depois de cada atividade passa a refletir o que realmente aconteceu no seu treino.</p>
+
+  <h2>Como conectar o Strava com um treinador de IA</h2>
+
+  <p>O Strava sozinho registra o que você fez. O que ele não faz é dizer o que fazer na próxima semana com base no que você acabou de registrar. Para isso você precisa de uma camada de inteligência sobre os dados.</p>
+
+  <p>O Ranü conecta com o Strava via OAuth e lê cada atividade automaticamente após a sincronização. Com base nas zonas de FC, pace, cadência e aderência ao plano, o treinador IA analisa cada corrida e propõe ajustes para a próxima semana. É o equivalente a mandar o arquivo FIT para um treinador e receber feedback detalhado, automaticamente.</p>
+
+  <div class="highlight-quote">
+    Seu pace caiu 18s/km nos últimos 2 tempo runs. Isso indica que você pode estar acumulando fadiga. Vou reduzir o volume desta quinta e deixar o intervalado para a semana que vem, quando você estiver mais fresco.
+  </div>
+
+  <p>Esse é o tipo de feedback que o Ranü gera automaticamente após cada atividade sincronizada, usando seus dados reais do Strava.</p>
+
+  <!-- CTA SECTION -->
+  <div class="cta-section" id="cta">
+    <h2>O Ranü lê seus treinos do Strava e ajusta seu plano automaticamente</h2>
+    <p>Conecte uma vez. Cada corrida sincronizada vira análise, feedback e ajuste de plano. Sem planilha, sem registro manual.</p>
+    <div class="cta-features">
+      <span class="cta-feat"><span class="dot"></span> Integração Strava em 1 clique</span>
+      <span class="cta-feat"><span class="dot"></span> Análise de zonas, pace e cadência</span>
+      <span class="cta-feat"><span class="dot"></span> Ajuste de plano baseado em dados reais</span>
+    </div>
+    <a href="/#cta" class="cta-button">Começar 14 dias grátis</a>
+    <p class="cta-sub">Sem cartão de crédito. Cancela quando quiser.</p>
+  </div>
+
+  <h2>Perguntas frequentes</h2>
+
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">Preciso do Strava Premium para aproveitar os dados de treino?</div>
+      <div class="faq-a">As métricas básicas (pace, distância, FC média, cadência, elevação) estão disponíveis na versão gratuita. O Strava Premium adiciona Fitness and Freshness (forma e frescor), análise de potência e segmentos ilimitados. Para corredores, a versão gratuita já oferece dados suficientes para análise de treino.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">O que é o Suffer Score do Strava e como interpretar?</div>
+      <div class="faq-a">O Suffer Score é uma pontuação de carga cardiovascular baseada no tempo em cada zona de FC. Um treino de recuperação leve fica em torno de 20-40; um intervalado intenso pode passar de 150. Use como referência de carga relativa entre sessões, não como meta absoluta.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Como o Strava calcula as zonas de frequência cardíaca?</div>
+      <div class="faq-a">Por padrão, o Strava usa a fórmula 220 menos a idade para estimar a FCmax. Você deve personalizar esse valor nas configurações de perfil usando a FCmax real, medida em teste ou calculada pela fórmula de Tanaka (208 - 0,7 x idade).</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Qual a diferença entre cadência e pace no Strava?</div>
+      <div class="faq-a">Pace mede a velocidade (minutos por km). Cadência mede o número de passos por minuto. Cadência ideal para corrida eficiente fica entre 170-180 passos/min. Se a sua está abaixo de 165, você provavelmente está dando passadas muito longas, o que aumenta o impacto articular.</div>
+    </div>
+  </div>
+
+</article>
+
+<footer>
+  Artigo escrito pela equipe Ranü. Última atualização: março de 2026. | <a href="/blog" style="color: var(--text-muted);">Blog</a> | <a href="/" style="color: var(--text-muted);">ranu.app</a>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const el = document.getElementById('progressBar');
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    el.style.width = (window.scrollY / h * 100) + '%';
+  });
+</script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Termos de Uso — Ranü</title>
+  <link rel="icon" type="image/png" href="./assets/Logo-04.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'SpaceBT';
+      src: url('./assets/SpaceBT.otf') format('opentype');
+      font-weight: 700; font-style: normal; font-display: swap;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --g: #94CA55;
+      --bg: #080809; --bg-2: #0d0e0f;
+      --text: #f0f0ee; --text-2: rgba(240,240,238,.6); --text-3: rgba(240,240,238,.35);
+      --border: rgba(255,255,255,.07);
+      --font-d: 'SpaceBT', 'Bricolage Grotesque', sans-serif;
+      --font-b: 'Bricolage Grotesque', sans-serif;
+      --font-m: 'JetBrains Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-b); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(8,8,9,.92); backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 56px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 32px; width: auto; }
+    .nav-logo-text { font-family: var(--font-d); font-size: 20px; letter-spacing: .04em; color: #fff; }
+    .nav-back { display: flex; align-items: center; gap: 8px; color: var(--text-2); text-decoration: none; font-size: 13.5px; transition: color .2s; }
+    .nav-back:hover { color: var(--text); }
+
+    .legal-wrap { max-width: 760px; margin: 0 auto; padding: 80px 56px 120px; }
+
+    .legal-kicker { font-family: var(--font-m); font-size: 10px; letter-spacing: .16em; color: var(--g); text-transform: uppercase; margin-bottom: 16px; }
+    .legal-title { font-family: var(--font-d); font-size: clamp(32px,5vw,56px); font-weight: 700; line-height: 1.05; letter-spacing: -.025em; margin-bottom: 12px; }
+    .legal-meta { font-size: 13px; color: var(--text-3); font-family: var(--font-m); margin-bottom: 56px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+
+    .legal-section { margin-bottom: 48px; }
+    .legal-h2 { font-family: var(--font-b); font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .legal-h3 { font-family: var(--font-b); font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 10px; margin-top: 24px; }
+    .legal-p { font-size: 15px; color: var(--text-2); line-height: 1.75; margin-bottom: 14px; }
+    .legal-p strong { color: var(--text); font-weight: 600; }
+    .legal-p a { color: var(--g); text-decoration: none; }
+    .legal-p a:hover { text-decoration: underline; }
+    .legal-list { margin: 12px 0 14px 0; padding-left: 24px; }
+    .legal-list li { font-size: 15px; color: var(--text-2); line-height: 1.75; margin-bottom: 8px; }
+    .legal-list li strong { color: var(--text); }
+
+    .legal-footer { padding: 40px 56px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .legal-footer a { color: var(--text-3); font-size: 13px; text-decoration: none; }
+    .legal-footer a:hover { color: var(--text-2); }
+    .legal-footer span { color: var(--text-3); font-size: 13px; }
+
+    @media (max-width: 600px) {
+      nav { padding: 14px 24px; }
+      .legal-wrap { padding: 60px 24px 80px; }
+      .legal-footer { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="./assets/Logo-04.png" alt="">
+      <span class="nav-logo-text">RANÜ</span>
+    </a>
+    <a href="index.html" class="nav-back">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Voltar
+    </a>
+  </nav>
+
+  <div class="legal-wrap">
+    <div class="legal-kicker">Legal</div>
+    <h1 class="legal-title">Termos de Uso</h1>
+    <p class="legal-meta">Última atualização: março de 2026 &nbsp;·&nbsp; Ranü Tecnologia Ltda.</p>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">1. Aceitação dos Termos</h2>
+      <p class="legal-p">
+        Ao acessar ou usar o Ranü (o "Serviço"), você concorda com estes Termos de Uso.
+        Se você não concordar com qualquer parte destes termos, não poderá usar o Serviço.
+      </p>
+      <p class="legal-p">
+        Estes Termos se aplicam a todos os usuários, incluindo visitantes, usuários registrados
+        e assinantes pagantes.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">2. Descrição do Serviço</h2>
+      <p class="legal-p">
+        O Ranü é uma plataforma de treinamento inteligente para corredores que utiliza inteligência
+        artificial para gerar planos de treino personalizados, analisar atividades físicas e
+        fornecer orientação baseada em evidências científicas.
+      </p>
+      <p class="legal-p">
+        <strong>Aviso importante:</strong> O Ranü é uma ferramenta de apoio ao treinamento e
+        <strong>não substitui a orientação de um Profissional de Educação Física habilitado</strong>,
+        médico ou outro profissional de saúde. Consulte um profissional antes de iniciar qualquer
+        programa de exercícios, especialmente se você tiver condições de saúde preexistentes.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">3. Elegibilidade</h2>
+      <p class="legal-p">Para usar o Ranü, você deve:</p>
+      <ul class="legal-list">
+        <li>Ter pelo menos 18 anos de idade, ou ter consentimento de pais ou responsáveis legais;</li>
+        <li>Ter capacidade legal para celebrar contratos vinculativos;</li>
+        <li>Não ter sido previamente banido do Serviço.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">4. Conta de Usuário</h2>
+      <h3 class="legal-h3">4.1 Criação de conta</h3>
+      <p class="legal-p">
+        Para acessar recursos completos, você deve criar uma conta com informações precisas
+        e atualizadas. Você é responsável por manter a confidencialidade de suas credenciais
+        de acesso.
+      </p>
+      <h3 class="legal-h3">4.2 Responsabilidade da conta</h3>
+      <p class="legal-p">
+        Você é responsável por todas as atividades que ocorrem sob sua conta.
+        Notifique-nos imediatamente em caso de acesso não autorizado.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">5. Assinatura e Pagamentos</h2>
+      <h3 class="legal-h3">5.1 Período de teste gratuito</h3>
+      <p class="legal-p">
+        Oferecemos 14 dias de teste gratuito sem necessidade de cartão de crédito.
+        Após o período de teste, é necessária assinatura paga para continuar usando o Serviço.
+      </p>
+      <h3 class="legal-h3">5.2 Cobrança</h3>
+      <p class="legal-p">
+        A assinatura é cobrada antecipadamente no início de cada período (mensal, semestral
+        ou anual). Os preços estão sujeitos a alterações com aviso prévio de 30 dias.
+      </p>
+      <h3 class="legal-h3">5.3 Cancelamento</h3>
+      <p class="legal-p">
+        Você pode cancelar sua assinatura a qualquer momento. O cancelamento entrará em vigor
+        ao final do período de faturamento atual. Não há reembolso parcial para períodos não utilizados,
+        exceto quando exigido por lei.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">6. Uso Aceitável</h2>
+      <p class="legal-p">Você concorda em não:</p>
+      <ul class="legal-list">
+        <li>Usar o Serviço para fins ilegais ou não autorizados;</li>
+        <li>Tentar acessar sistemas ou dados não destinados ao seu uso;</li>
+        <li>Reproduzir, duplicar ou revender qualquer parte do Serviço sem autorização;</li>
+        <li>Enviar conteúdo prejudicial, difamatório ou que viole direitos de terceiros;</li>
+        <li>Usar scrapers, bots ou outros meios automatizados para acessar o Serviço.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">7. Propriedade Intelectual</h2>
+      <p class="legal-p">
+        Todo o conteúdo do Serviço — incluindo textos, gráficos, logotipos, algoritmos e
+        software — é propriedade da Ranü Tecnologia Ltda. e está protegido por leis de
+        propriedade intelectual.
+      </p>
+      <p class="legal-p">
+        Você recebe uma licença limitada, não exclusiva e não transferível para usar o
+        Serviço para fins pessoais e não comerciais.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">8. Limitação de Responsabilidade</h2>
+      <p class="legal-p">
+        O Ranü fornece orientações de treinamento baseadas em dados fornecidos pelo usuário
+        e metodologias científicas, mas <strong>não garante resultados específicos</strong>
+        de desempenho ou saúde.
+      </p>
+      <p class="legal-p">
+        Na extensão máxima permitida pela lei aplicável, a Ranü Tecnologia Ltda. não será
+        responsável por danos indiretos, incidentais, especiais ou consequentes decorrentes
+        do uso ou incapacidade de uso do Serviço.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">9. Integração com Terceiros</h2>
+      <p class="legal-p">
+        O Serviço pode integrar com plataformas de terceiros (como Strava). Essas integrações
+        estão sujeitas aos termos e políticas de privacidade dos respectivos serviços.
+        O Ranü não se responsabiliza por dados, práticas ou serviços de terceiros.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">10. Modificações dos Termos</h2>
+      <p class="legal-p">
+        Podemos atualizar estes Termos periodicamente. Notificaremos sobre mudanças
+        significativas por e-mail ou notificação no aplicativo. O uso continuado do
+        Serviço após as mudanças constitui aceitação dos novos Termos.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">11. Lei Aplicável e Foro</h2>
+      <p class="legal-p">
+        Estes Termos são regidos pelas leis da República Federativa do Brasil.
+        Eventuais disputas serão resolvidas no foro da comarca de São Paulo, SP,
+        com renúncia a qualquer outro, por mais privilegiado que seja.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">12. Contato</h2>
+      <p class="legal-p">
+        Dúvidas sobre estes Termos? Entre em contato: <a href="mailto:juridico@ranu.app">juridico@ranu.app</a>
+      </p>
+    </div>
+  </div>
+
+  <footer class="legal-footer">
+    <span>© 2026 Ranü Tecnologia Ltda.</span>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;">
+      <a href="index.html">Início</a>
+      <a href="privacidade.html">Política de Privacidade</a>
+      <a href="o-que-e-ranu.html">O que é Ranü</a>
+    </div>
+  </footer>
+
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

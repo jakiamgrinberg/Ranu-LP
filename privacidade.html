@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidade — Ranü</title>
+  <link rel="icon" type="image/png" href="./assets/Logo-04.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'SpaceBT';
+      src: url('./assets/SpaceBT.otf') format('opentype');
+      font-weight: 700; font-style: normal; font-display: swap;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --g: #94CA55;
+      --bg: #080809; --bg-2: #0d0e0f;
+      --text: #f0f0ee; --text-2: rgba(240,240,238,.6); --text-3: rgba(240,240,238,.35);
+      --border: rgba(255,255,255,.07);
+      --font-d: 'SpaceBT', 'Bricolage Grotesque', sans-serif;
+      --font-b: 'Bricolage Grotesque', sans-serif;
+      --font-m: 'JetBrains Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-b); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(8,8,9,.92); backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 56px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 32px; width: auto; }
+    .nav-logo-text { font-family: var(--font-d); font-size: 20px; letter-spacing: .04em; color: #fff; }
+    .nav-back { display: flex; align-items: center; gap: 8px; color: var(--text-2); text-decoration: none; font-size: 13.5px; transition: color .2s; }
+    .nav-back:hover { color: var(--text); }
+
+    .legal-wrap { max-width: 760px; margin: 0 auto; padding: 80px 56px 120px; }
+
+    .legal-kicker { font-family: var(--font-m); font-size: 10px; letter-spacing: .16em; color: var(--g); text-transform: uppercase; margin-bottom: 16px; }
+    .legal-title { font-family: var(--font-d); font-size: clamp(32px,5vw,56px); font-weight: 700; line-height: 1.05; letter-spacing: -.025em; margin-bottom: 12px; }
+    .legal-meta { font-size: 13px; color: var(--text-3); font-family: var(--font-m); margin-bottom: 56px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+
+    .legal-section { margin-bottom: 48px; }
+    .legal-h2 { font-family: var(--font-b); font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .legal-h3 { font-family: var(--font-b); font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 10px; margin-top: 24px; }
+    .legal-p { font-size: 15px; color: var(--text-2); line-height: 1.75; margin-bottom: 14px; }
+    .legal-p strong { color: var(--text); font-weight: 600; }
+    .legal-p a { color: var(--g); text-decoration: none; }
+    .legal-p a:hover { text-decoration: underline; }
+    .legal-list { margin: 12px 0 14px 0; padding-left: 24px; }
+    .legal-list li { font-size: 15px; color: var(--text-2); line-height: 1.75; margin-bottom: 8px; }
+    .legal-list li strong { color: var(--text); }
+    .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+    .data-table th { font-family: var(--font-m); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); color: var(--text-3); }
+    .data-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text-2); vertical-align: top; }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+    @media (max-width: 580px) { .rights-grid { grid-template-columns: 1fr; } }
+    .right-item { background: rgba(255,255,255,.03); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; }
+    .right-item-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .right-item-desc { font-size: 13px; color: var(--text-2); line-height: 1.6; }
+
+    .legal-footer { padding: 40px 56px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .legal-footer a { color: var(--text-3); font-size: 13px; text-decoration: none; }
+    .legal-footer a:hover { color: var(--text-2); }
+    .legal-footer span { color: var(--text-3); font-size: 13px; }
+
+    @media (max-width: 600px) {
+      nav { padding: 14px 24px; }
+      .legal-wrap { padding: 60px 24px 80px; }
+      .legal-footer { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="./assets/Logo-04.png" alt="">
+      <span class="nav-logo-text">RANÜ</span>
+    </a>
+    <a href="index.html" class="nav-back">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Voltar
+    </a>
+  </nav>
+
+  <div class="legal-wrap">
+    <div class="legal-kicker">Legal</div>
+    <h1 class="legal-title">Política de Privacidade</h1>
+    <p class="legal-meta">Última atualização: março de 2026 &nbsp;·&nbsp; Ranü Tecnologia Ltda. &nbsp;·&nbsp; Em conformidade com a LGPD (Lei 13.709/2018)</p>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">1. Quem somos</h2>
+      <p class="legal-p">
+        A <strong>Ranü Tecnologia Ltda.</strong> ("Ranü", "nós") é a operadora dos dados
+        pessoais coletados pelo Serviço Ranü. Estamos comprometidos com a proteção da
+        sua privacidade e com a conformidade com a Lei Geral de Proteção de Dados (LGPD).
+      </p>
+      <p class="legal-p">
+        Para dúvidas sobre privacidade, contate nosso Encarregado de Dados (DPO):
+        <a href="mailto:privacidade@ranu.app">privacidade@ranu.app</a>
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">2. Dados que coletamos</h2>
+      <p class="legal-p">Coletamos os seguintes tipos de dados:</p>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Categoria</th>
+            <th>Dados coletados</th>
+            <th>Finalidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Cadastro</strong></td>
+            <td>Nome, e-mail, senha (hash)</td>
+            <td>Criação e gerenciamento de conta</td>
+          </tr>
+          <tr>
+            <td><strong>Perfil de saúde</strong></td>
+            <td>Idade, peso, FC máxima, histórico de lesões</td>
+            <td>Personalização do plano de treino</td>
+          </tr>
+          <tr>
+            <td><strong>Atividades físicas</strong></td>
+            <td>Dados de corrida via Strava (distância, pace, FC, GPS)</td>
+            <td>Análise pós-treino e ajuste de plano</td>
+          </tr>
+          <tr>
+            <td><strong>Conversas</strong></td>
+            <td>Mensagens do onboarding e chat com o Ranü</td>
+            <td>Personalização e melhoria do Serviço</td>
+          </tr>
+          <tr>
+            <td><strong>Pagamento</strong></td>
+            <td>Dados de cobrança (processados por gateway seguro)</td>
+            <td>Processamento de assinatura</td>
+          </tr>
+          <tr>
+            <td><strong>Uso do app</strong></td>
+            <td>Logs de acesso, interações, erros</td>
+            <td>Segurança, suporte e melhoria do produto</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">3. Base legal para tratamento (LGPD)</h2>
+      <p class="legal-p">Tratamos seus dados com base nas seguintes hipóteses legais:</p>
+      <ul class="legal-list">
+        <li><strong>Execução de contrato:</strong> dados necessários para prestar o Serviço contratado;</li>
+        <li><strong>Consentimento:</strong> para comunicações de marketing e dados sensíveis de saúde (você pode revogar a qualquer momento);</li>
+        <li><strong>Interesse legítimo:</strong> para prevenção de fraudes, segurança e melhoria do produto;</li>
+        <li><strong>Cumprimento de obrigação legal:</strong> dados fiscais e contábeis exigidos por lei.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">4. Como usamos seus dados</h2>
+      <p class="legal-p">Seus dados são usados exclusivamente para:</p>
+      <ul class="legal-list">
+        <li>Gerar e personalizar seu plano de treino;</li>
+        <li>Analisar atividades físicas e fornecer feedback;</li>
+        <li>Processar pagamentos e gerenciar sua assinatura;</li>
+        <li>Enviar comunicações relacionadas ao Serviço (transacionais);</li>
+        <li>Melhorar nossos algoritmos e modelos de IA (dados anonimizados);</li>
+        <li>Cumprir obrigações legais e regulatórias.</li>
+      </ul>
+      <p class="legal-p">
+        <strong>Não vendemos seus dados pessoais</strong> para terceiros e não os utilizamos
+        para publicidade comportamental de terceiros.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">5. Compartilhamento de dados</h2>
+      <p class="legal-p">Podemos compartilhar seus dados com:</p>
+      <ul class="legal-list">
+        <li><strong>Strava:</strong> mediante sua autorização explícita, para sincronização de atividades;</li>
+        <li><strong>Processadores de pagamento:</strong> para cobrança de assinaturas (ex: Stripe);</li>
+        <li><strong>Provedores de infraestrutura:</strong> servidores em nuvem com acordos de DPA;</li>
+        <li><strong>Autoridades legais:</strong> quando exigido por lei ou ordem judicial.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">6. Retenção de dados</h2>
+      <p class="legal-p">
+        Mantemos seus dados pelo tempo necessário para prestar o Serviço. Após o cancelamento
+        da conta, os dados são retidos por até <strong>90 dias</strong> para fins de suporte
+        e, depois, excluídos permanentemente ou anonimizados, exceto quando a retenção for
+        exigida por lei (ex: dados fiscais por 5 anos).
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">7. Seus direitos (LGPD)</h2>
+      <p class="legal-p">Como titular de dados, você tem os seguintes direitos:</p>
+      <div class="rights-grid">
+        <div class="right-item">
+          <div class="right-item-title">Acesso</div>
+          <p class="right-item-desc">Solicitar uma cópia de todos os dados pessoais que temos sobre você.</p>
+        </div>
+        <div class="right-item">
+          <div class="right-item-title">Correção</div>
+          <p class="right-item-desc">Solicitar a correção de dados incompletos, inexatos ou desatualizados.</p>
+        </div>
+        <div class="right-item">
+          <div class="right-item-title">Exclusão</div>
+          <p class="right-item-desc">Solicitar a exclusão de dados desnecessários ou tratados em desconformidade com a LGPD.</p>
+        </div>
+        <div class="right-item">
+          <div class="right-item-title">Portabilidade</div>
+          <p class="right-item-desc">Receber seus dados em formato estruturado para transferência a outro serviço.</p>
+        </div>
+        <div class="right-item">
+          <div class="right-item-title">Revogação do consentimento</div>
+          <p class="right-item-desc">Revogar consentimentos concedidos anteriormente, a qualquer momento.</p>
+        </div>
+        <div class="right-item">
+          <div class="right-item-title">Oposição</div>
+          <p class="right-item-desc">Opor-se ao tratamento baseado em interesse legítimo em determinadas situações.</p>
+        </div>
+      </div>
+      <p class="legal-p" style="margin-top:20px">
+        Para exercer qualquer direito, envie sua solicitação para
+        <a href="mailto:privacidade@ranu.app">privacidade@ranu.app</a>.
+        Responderemos em até 15 dias úteis.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">8. Segurança dos dados</h2>
+      <p class="legal-p">
+        Adotamos medidas técnicas e organizacionais para proteger seus dados, incluindo:
+        criptografia em trânsito (TLS) e em repouso, controle de acesso baseado em funções,
+        logs de auditoria e avaliações regulares de segurança.
+      </p>
+      <p class="legal-p">
+        Em caso de incidente de segurança que possa impactar seus dados, notificaremos
+        a ANPD e os titulares afetados nos prazos exigidos pela LGPD.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">9. Cookies e rastreamento</h2>
+      <p class="legal-p">
+        Utilizamos cookies essenciais para o funcionamento do Serviço (autenticação, sessão)
+        e cookies analíticos para entender o uso da plataforma. Você pode gerenciar suas
+        preferências de cookies nas configurações do seu navegador.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">10. Transferências internacionais</h2>
+      <p class="legal-p">
+        Alguns de nossos provedores de infraestrutura estão localizados fora do Brasil.
+        Nesses casos, garantimos que as transferências são realizadas com salvaguardas
+        adequadas, em conformidade com o art. 33 da LGPD.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">11. Menores de idade</h2>
+      <p class="legal-p">
+        O Serviço não é direcionado a menores de 18 anos. Não coletamos intencionalmente
+        dados de crianças ou adolescentes. Se identificarmos coleta inadvertida, excluiremos
+        os dados imediatamente.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">12. Alterações nesta política</h2>
+      <p class="legal-p">
+        Podemos atualizar esta Política periodicamente. Notificaremos sobre mudanças
+        materiais por e-mail com antecedência mínima de 15 dias antes da vigência.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-h2">13. Contato e DPO</h2>
+      <p class="legal-p">
+        <strong>Encarregado de Proteção de Dados (DPO):</strong><br>
+        E-mail: <a href="mailto:privacidade@ranu.app">privacidade@ranu.app</a><br>
+        Ranü Tecnologia Ltda. — São Paulo, SP, Brasil
+      </p>
+      <p class="legal-p">
+        Você também pode registrar reclamação perante a
+        <strong>ANPD (Autoridade Nacional de Proteção de Dados)</strong>:
+        <a href="https://www.gov.br/anpd" target="_blank" rel="noopener">gov.br/anpd</a>
+      </p>
+    </div>
+  </div>
+
+  <footer class="legal-footer">
+    <span>© 2026 Ranü Tecnologia Ltda.</span>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;">
+      <a href="index.html">Início</a>
+      <a href="termos.html">Termos de Uso</a>
+      <a href="o-que-e-ranu.html">O que é Ranü</a>
+    </div>
+  </footer>
+
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

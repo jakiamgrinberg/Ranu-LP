@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O que é Ranü — Treinador de Corrida com IA e Base Científica</title>
+  <meta name="description" content="Entenda o que é o Ranü: treinador de corrida com IA que combina ciência do esporte, zonas de FC personalizadas e planos adaptativos para corredores de todos os níveis.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ranu.app/o-que-e-ranu">
+  <link rel="icon" type="image/png" href="./assets/Logo-04.png">
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://ranu.app/o-que-e-ranu">
+  <meta property="og:site_name"   content="Ranü">
+  <meta property="og:title"       content="O que é Ranü — Treinador de Corrida com IA e Base Científica">
+  <meta property="og:description" content="Treinador de corrida com IA que combina ciência do esporte, zonas de FC personalizadas e planos adaptativos para corredores de todos os níveis.">
+  <meta property="og:image"       content="https://ranu.app/assets/og-image.png">
+  <meta property="og:locale"      content="pt_BR">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="O que é Ranü — Treinador de Corrida com IA">
+  <meta name="twitter:description" content="Treinador de corrida com IA, zonas de FC personalizadas e planos com base científica.">
+  <meta name="twitter:image"       content="https://ranu.app/assets/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'SpaceBT';
+      src: url('./assets/SpaceBT.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --g: #94CA55;
+      --g-dim: rgba(148,202,85,.08);
+      --border-g: rgba(148,202,85,.25);
+      --bg: #080809;
+      --bg-2: #0d0e0f;
+      --text: #f0f0ee;
+      --text-2: rgba(240,240,238,.6);
+      --text-3: rgba(240,240,238,.35);
+      --border: rgba(255,255,255,.07);
+      --font-d: 'SpaceBT', 'Bricolage Grotesque', sans-serif;
+      --font-b: 'Bricolage Grotesque', sans-serif;
+      --font-m: 'JetBrains Mono', monospace;
+      --r-sm: 8px;
+      --r-md: 12px;
+      --r-lg: 16px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-b);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---- NAV ---- */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 56px;
+      border-bottom: 1px solid transparent;
+      transition: all .3s ease;
+    }
+    nav.scrolled {
+      background: rgba(8,8,9,.88);
+      backdrop-filter: blur(24px) saturate(160%);
+      border-color: var(--border);
+      padding-top: 14px; padding-bottom: 14px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px; text-decoration: none;
+    }
+    .nav-logo-icon { height: 36px; width: auto; display: block; }
+    .nav-logo-text {
+      font-family: var(--font-d); font-size: 22px; letter-spacing: .04em;
+      color: #fff; opacity: .93; line-height: 1;
+    }
+    .nav-back {
+      display: flex; align-items: center; gap: 8px;
+      color: var(--text-2); text-decoration: none; font-size: 13.5px;
+      font-weight: 500; transition: color .2s;
+    }
+    .nav-back:hover { color: var(--text); }
+    .btn-green-sm {
+      background: var(--g); color: #0a0f04; border: none;
+      font-family: var(--font-b); font-size: 13px; font-weight: 700;
+      letter-spacing: .02em; padding: 9px 20px; border-radius: 100px;
+      cursor: pointer; text-decoration: none; transition: opacity .2s;
+    }
+    .btn-green-sm:hover { opacity: .88; }
+
+    /* ---- PAGE HERO ---- */
+    .page-hero {
+      padding: 160px max(56px, calc((100vw - 1160px) / 2 + 56px)) 80px;
+      position: relative; overflow: hidden;
+    }
+    .page-hero-inner { max-width: 760px; }
+    .page-kicker {
+      font-family: var(--font-m); font-size: 10px; letter-spacing: .16em;
+      color: var(--g); text-transform: uppercase; margin-bottom: 20px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .page-kicker::before {
+      content: ''; display: block; width: 24px; height: 1px; background: var(--g);
+    }
+    .page-h1 {
+      font-family: var(--font-d);
+      font-size: clamp(40px, 6vw, 80px);
+      font-weight: 700; line-height: 1.0; letter-spacing: -.03em;
+      color: var(--text); margin-bottom: 28px;
+    }
+    .page-h1 .accent { color: var(--g); }
+    .page-lead {
+      font-size: clamp(16px, 1.5vw, 19px); color: var(--text-2);
+      line-height: 1.65; max-width: 600px;
+    }
+    .hero-bg-glow {
+      position: absolute; top: 0; right: -10%; width: 50%; height: 100%;
+      background: radial-gradient(ellipse at 70% 30%, rgba(148,202,85,.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* ---- Brand story ---- */
+    .brand-section {
+      padding: 80px max(56px, calc((100vw - 1160px) / 2 + 56px));
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+    .brand-word-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 24px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+    .brand-word {
+      font-family: var(--font-d);
+      font-size: clamp(64px, 12vw, 120px);
+      font-weight: 700;
+      letter-spacing: -.04em;
+      line-height: 1;
+      color: var(--g);
+      filter: drop-shadow(0 0 40px rgba(148,202,85,.25));
+    }
+    .brand-word-meta {
+      padding-bottom: 12px;
+    }
+    .brand-ipa {
+      font-family: var(--font-m);
+      font-size: 13px;
+      color: var(--text-3);
+      letter-spacing: .04em;
+      margin-bottom: 6px;
+    }
+    .brand-origin {
+      font-size: 13px;
+      color: var(--text-3);
+      line-height: 1.5;
+    }
+    .brand-origin strong { color: var(--text-2); }
+    .brand-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    @media (max-width: 760px) {
+      .brand-split { grid-template-columns: 1fr; gap: 32px; }
+      .brand-word { font-size: clamp(56px, 18vw, 96px); }
+    }
+    .brand-meaning {
+      font-size: clamp(20px, 2.5vw, 26px);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 20px;
+      font-family: var(--font-b);
+    }
+    .brand-meaning em {
+      color: var(--g);
+      font-style: normal;
+    }
+    .brand-body {
+      font-size: 15px;
+      color: var(--text-2);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .brand-divider {
+      width: 32px; height: 1px;
+      background: var(--g);
+      margin: 28px 0;
+      opacity: .4;
+    }
+    .brand-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .brand-pillar {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .brand-pillar:last-child { border-bottom: none; }
+    .bp-icon {
+      width: 36px; height: 36px;
+      background: var(--g-dim);
+      border: 1px solid var(--border-g);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--g);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .bp-title {
+      font-family: var(--font-b);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .bp-desc {
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+
+    /* ---- SECTIONS ---- */
+    .page-section {
+      padding: 80px max(56px, calc((100vw - 1160px) / 2 + 56px));
+      border-top: 1px solid var(--border);
+    }
+    .page-section:nth-child(odd) { background: var(--bg-2); }
+    .sec-label {
+      font-family: var(--font-m); font-size: 10px; letter-spacing: .16em;
+      color: var(--g); text-transform: uppercase; margin-bottom: 16px;
+    }
+    .sec-h2 {
+      font-family: var(--font-d); font-size: clamp(28px, 3vw, 44px);
+      font-weight: 700; line-height: 1.1; letter-spacing: -.025em;
+      color: var(--text); margin-bottom: 20px;
+    }
+    .sec-h2 .em { color: var(--g); }
+    .sec-body {
+      font-size: 16px; color: var(--text-2); line-height: 1.7;
+      max-width: 680px;
+    }
+    .sec-body + .sec-body { margin-top: 16px; }
+    .sec-body strong { color: var(--text); font-weight: 600; }
+
+    /* ---- SPLIT LAYOUT ---- */
+    .split {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+      align-items: start;
+    }
+    @media (max-width: 860px) { .split { grid-template-columns: 1fr; gap: 40px; } }
+
+    /* ---- AUDIENCE CARDS ---- */
+    .audience-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px;
+    }
+    @media (max-width: 640px) { .audience-grid { grid-template-columns: 1fr; } }
+    .aud-card {
+      background: var(--g-dim); border: 1px solid var(--border-g);
+      border-radius: var(--r-lg); padding: 28px;
+    }
+    .aud-icon {
+      width: 40px; height: 40px; background: rgba(148,202,85,.15);
+      border-radius: var(--r-sm); display: flex; align-items: center;
+      justify-content: center; color: var(--g); margin-bottom: 16px;
+    }
+    .aud-title {
+      font-family: var(--font-d); font-size: 18px; font-weight: 700;
+      color: var(--text); margin-bottom: 10px; line-height: 1.2;
+    }
+    .aud-desc { font-size: 14px; color: var(--text-2); line-height: 1.6; }
+
+    /* ---- PRINCIPLES LIST ---- */
+    .principles { display: flex; flex-direction: column; gap: 0; margin-top: 32px; }
+    .principle {
+      display: grid; grid-template-columns: 48px 1fr; gap: 20px;
+      padding: 24px 0; border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .principle:first-child { padding-top: 0; }
+    .principle:last-child { border-bottom: none; }
+    .prin-num {
+      font-family: var(--font-m); font-size: 11px; letter-spacing: .08em;
+      color: var(--g); padding-top: 4px;
+    }
+    .prin-title {
+      font-family: var(--font-b); font-size: 16px; font-weight: 700;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .prin-desc { font-size: 14px; color: var(--text-2); line-height: 1.6; }
+
+    /* ---- COMPARISON TABLE ---- */
+    .compare-scroll-hint {
+      display: none; font-size: 11px; color: var(--text-3);
+      font-family: var(--font-m); text-align: center; margin-bottom: 8px;
+    }
+    @media (max-width: 700px) { .compare-scroll-hint { display: block; } }
+    .compare-table { width: 100%; min-width: 620px; margin-top: 8px; border-collapse: collapse; }
+    .compare-table th {
+      font-family: var(--font-m); font-size: 10px; letter-spacing: .1em;
+      text-transform: uppercase; padding: 10px 16px; text-align: left;
+      border-bottom: 1px solid var(--border); color: var(--text-3);
+    }
+    .compare-table th:not(:first-child) { text-align: center; }
+    .compare-table td {
+      padding: 14px 16px; border-bottom: 1px solid var(--border);
+      font-size: 14px; color: var(--text-2); vertical-align: middle;
+    }
+    .compare-table td:not(:first-child) { text-align: center; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table .col-ranu { background: rgba(148,202,85,.04); }
+    .compare-table .col-ranu th,
+    .compare-table .col-ranu-td { background: rgba(148,202,85,.04); }
+    .ct-yes { color: var(--g); font-weight: 700; }
+    .ct-no { color: var(--text-3); }
+    .ct-partial { color: rgba(240,180,50,.8); }
+    .ct-head-ranu { color: var(--g) !important; }
+
+    /* ---- CTA BLOCK ---- */
+    .page-cta {
+      padding: 80px max(56px, calc((100vw - 1160px) / 2 + 56px));
+      text-align: center; border-top: 1px solid var(--border);
+    }
+    .page-cta h2 {
+      font-family: var(--font-d); font-size: clamp(28px, 3.5vw, 52px);
+      font-weight: 700; letter-spacing: -.025em; line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .page-cta h2 .em { color: var(--g); }
+    .page-cta p { color: var(--text-2); font-size: 16px; margin-bottom: 32px; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--g); color: #0a0f04; border: none;
+      font-family: var(--font-b); font-size: 15px; font-weight: 700;
+      padding: 14px 28px; border-radius: 100px; cursor: pointer;
+      text-decoration: none; transition: opacity .2s;
+    }
+    .btn-primary:hover { opacity: .88; }
+
+    /* ---- FOOTER ---- */
+    .page-footer {
+      background: var(--bg); border-top: 1px solid var(--border);
+      padding: 40px max(56px, calc((100vw - 1160px) / 2 + 56px));
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .page-footer a { color: var(--text-3); text-decoration: none; font-size: 13px; }
+    .page-footer a:hover { color: var(--text-2); }
+    .footer-copy { font-size: 13px; color: var(--text-3); }
+
+    /* ---- SCROLL REVEAL ---- */
+    [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    [data-reveal].visible { opacity: 1; transform: none; }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 24px; }
+      .page-hero { padding: 120px 24px 60px; }
+      .page-section { padding: 60px 24px; }
+      .page-cta { padding: 60px 24px; }
+      .page-footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="./assets/Logo-01.png" alt="Ranü" class="nav-logo-icon">
+    </a>
+    <a href="index.html" class="nav-back">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Voltar para o início
+    </a>
+    <a href="#" class="btn-green-sm">Começar grátis</a>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="hero-bg-glow"></div>
+    <div class="page-hero-inner" data-reveal>
+      <div class="page-kicker">O que é Ranü</div>
+      <h1 class="page-h1">
+        O apoio inteligente<br>
+        <span class="accent">que todo corredor</span><br>
+        sempre precisou.
+      </h1>
+      <p class="page-lead">
+        Ranü é uma plataforma inteligente de apoio ao treino que combina ciência do esporte,
+        personalização real e feedback contínuo, para corredores que estão
+        começando do zero ou buscando bater seu próximo PR.
+      </p>
+    </div>
+  </section>
+
+  <!-- BRAND STORY -->
+  <section class="brand-section" data-reveal>
+    <div class="brand-word-row">
+      <div class="brand-word">Ranü</div>
+      <div class="brand-word-meta">
+        <div class="brand-ipa">/ ra.ˈnü /</div>
+        <div class="brand-origin">Do idioma <strong>Krenak</strong>, povo indígena do Brasil</div>
+      </div>
+    </div>
+
+    <div class="brand-split">
+      <div>
+        <div class="brand-meaning">
+          Ranü significa <em>"adiante"</em>.<br>Seguir em frente, no seu ritmo.
+        </div>
+        <p class="brand-body">
+          Para os Krenak, avançar não é sobre pressa. É sobre consciência, equilíbrio
+          e progresso contínuo, um passo de cada vez.
+        </p>
+        <p class="brand-body">
+          Correr carrega essa mesma filosofia. Não se trata de velocidade ou perfeição.
+          É sobre aparecer, consistir e evoluir, sem se comparar com o ritmo de mais ninguém.
+        </p>
+        <div class="brand-divider"></div>
+        <p class="brand-body" style="font-size:16px;color:var(--text);font-weight:600;">
+          Você não precisa ser perfeito.<br>Você só precisa continuar indo em frente.
+        </p>
+      </div>
+
+      <div>
+        <div class="brand-pillars">
+          <div class="brand-pillar">
+            <div class="bp-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <div class="bp-title">Se adapta ao seu ritmo</div>
+              <p class="bp-desc">O plano muda conforme você muda, semana a semana, treino a treino.</p>
+            </div>
+          </div>
+          <div class="brand-pillar">
+            <div class="bp-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div>
+              <div class="bp-title">Analisa sua evolução</div>
+              <p class="bp-desc">Cada corrida vira dado. O Ranü lê o que seu corpo fez e ajusta o que vem a seguir.</p>
+            </div>
+          </div>
+          <div class="brand-pillar">
+            <div class="bp-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div>
+              <div class="bp-title">No seu tempo</div>
+              <p class="bp-desc">Sem pressão para acompanhar o ritmo dos outros. O progresso é o seu, e só o seu.</p>
+            </div>
+          </div>
+          <div class="brand-pillar">
+            <div class="bp-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <div>
+              <div class="bp-title">Evolui junto com você</div>
+              <p class="bp-desc">Do primeiro quilômetro à maratona, o Ranü acompanha cada fase da sua jornada.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUEM É -->
+  <section class="page-section" data-reveal>
+    <div class="sec-label">Para quem é</div>
+    <h2 class="sec-h2">Do primeiro passo ao <span class="em">RP na maratona.</span></h2>
+    <p class="sec-body">
+      O Ranü foi construído para servir corredores em qualquer estágio, do iniciante absoluto
+      que nunca correu 1 km até o corredor experiente que quer sair do platô e melhorar
+      seu tempo nas provas.
+    </p>
+    <div class="audience-grid">
+      <div class="aud-card">
+        <div class="aud-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="aud-title">Estou começando do zero</div>
+        <p class="aud-desc">
+          Nenhuma experiência anterior, sem equipamento especial. O Ranü estrutura sua
+          progressão de forma segura, começando com corridas leves em Z2 e construindo
+          sua base aeróbica da forma certa, sem lesões.
+        </p>
+      </div>
+      <div class="aud-card">
+        <div class="aud-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="aud-title">Quero melhorar meu tempo</div>
+        <p class="aud-desc">
+          Você já corre, mas está estagnado. O Ranü analisa seu histórico, identifica
+          onde está a limitação: intensidade errada, volume inadequado, recuperação
+          insuficiente, e ajusta seu plano semana a semana.
+        </p>
+      </div>
+      <div class="aud-card">
+        <div class="aud-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
+        </div>
+        <div class="aud-title">Tenho um objetivo específico</div>
+        <p class="aud-desc">
+          Maratona, meia-maratona, 10k ou 5k. Com data e objetivo em mente, o Ranü
+          monta um plano periodizado com fases de base, construção e polimento,
+          tudo calibrado para você cruzar a linha no seu melhor tempo.
+        </p>
+      </div>
+      <div class="aud-card">
+        <div class="aud-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div class="aud-title">Corro por saúde e bem-estar</div>
+        <p class="aud-desc">
+          Sem pressão de performance. O Ranü respeita sua disponibilidade semanal,
+          seu ritmo de vida e seus limites, entregando consistência e progresso
+          sem sacrificar o prazer de correr.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE FAZ -->
+  <section class="page-section" data-reveal>
+    <div class="split">
+      <div>
+        <div class="sec-label">O que o Ranü faz</div>
+        <h2 class="sec-h2">Não é um app genérico. É um <span class="em">assistente que te conhece.</span></h2>
+        <p class="sec-body">
+          A diferença é fundamental. Um app genérico te dá um plano fixo que você tenta seguir.
+          O Ranü entende quem você é, por que está treinando, e <strong>adapta o plano</strong>
+          quando a vida ou o seu corpo muda.
+        </p>
+        <p class="sec-body" style="margin-top:16px">
+          Onboarding conversacional para entender seu perfil real, plano gerado com base em
+          metodologias validadas cientificamente, e análise contínua de cada treino via Strava.
+          Uma ferramenta de apoio ao treino que trabalha <em>com</em> você, não no lugar de ninguém.
+        </p>
+      </div>
+      <div>
+        <div class="principles">
+          <div class="principle">
+            <div class="prin-num">01</div>
+            <div>
+              <div class="prin-title">Onboarding conversacional</div>
+              <p class="prin-desc">Em vez de formulário, o Ranü conversa com você. Objetivo, nível, histórico de lesões, disponibilidade semanal e FC máxima viram seu perfil completo.</p>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="prin-num">02</div>
+            <div>
+              <div class="prin-title">Plano 100% personalizado</div>
+              <p class="prin-desc">Gerado com base no seu perfil e revisado continuamente. Não é um template: é um plano que muda conforme você muda.</p>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="prin-num">03</div>
+            <div>
+              <div class="prin-title">Análise treino a treino</div>
+              <p class="prin-desc">Após cada corrida via Strava, o Ranü compara o executado com o planejado, avalia zonas de FC e entrega feedback acionável.</p>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="prin-num">04</div>
+            <div>
+              <div class="prin-title">Metodologia científica</div>
+              <p class="prin-desc">Volume, intensidade e progressão vêm de estudos revisados por pares, não de intuição ou tendências.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARAÇÃO -->
+  <section class="page-section" data-reveal>
+    <div class="sec-label">Comparação</div>
+    <h2 class="sec-h2">Ranü vs. as alternativas.</h2>
+    <p class="sec-body">
+      Apps genéricos ignoram seu histórico. IAs genéricas chutam sem dados reais. Planos fixos não evoluem com você. Treinador presencial custa de R$200 a R$400 por mês. O Ranü foi feito especificamente para corredores, com contexto real, metodologia científica e custo acessível.
+    </p>
+    <div class="compare-scroll-hint">← role para ver mais →</div>
+    <div style="overflow-x:auto; -webkit-overflow-scrolling:touch;">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Critério</th>
+          <th>App genérico</th>
+          <th>IA genérica<br><span style="font-size:9px;opacity:.6;text-transform:none;letter-spacing:0">(ChatGPT, Gemini…)</span></th>
+          <th>Plano fixo online</th>
+          <th class="ct-head-ranu">Ranü</th>
+          <th>Treinador presencial</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Plano 100% personalizado</td>
+          <td class="ct-no">✕</td>
+          <td class="ct-partial">Parcial¹</td>
+          <td class="ct-no">✕</td>
+          <td class="ct-yes col-ranu-td">✓</td>
+          <td class="ct-yes">✓</td>
+        </tr>
+        <tr>
+          <td>Lê seus dados reais de treino</td>
+          <td class="ct-partial">Parcial</td>
+          <td class="ct-no">✕</td>
+          <td class="ct-no">✕</td>
+          <td class="ct-yes col-ranu-td">✓ via Strava</td>
+          <td class="ct-yes">✓</td>
+        </tr>
+        <tr>
+          <td>Análise pós-treino automática</td>
+          <td class="ct-no">✕</td>
+          <td class="ct-no">✕</td>
+          <td class="ct-no">✕</td>
+          <td class="ct-yes col-ranu-td">✓</td>
+          <td class="ct-partial">Parcial</td>
+        </tr>
+        <tr>
+          <td>Adapta ao seu progresso</td>
+          <td class="ct-no">✕</td>
+          <td class="ct-no">✕²</td>
+          <td class="ct-no">✕</td>
+          <td class="ct-yes col-ranu-td">✓</td>
+          <td class="ct-yes">✓</td>
+        </tr>
+        <tr>
+          <td>Zonas de FC baseadas em você</td>
+          <td class="ct-partial">Parcial</td>
+          <td class="ct-no">✕</td>
+          <td class="ct-no">✕</td>
+          <td class="ct-yes col-ranu-td">✓</td>
+          <td class="ct-yes">✓</td>
+        </tr>
+        <tr>
+          <td>Metodologia com base científica</td>
+          <td class="ct-no">✕</td>
+          <td class="ct-partial">Varia</td>
+          <td class="ct-partial">Parcial</td>
+          <td class="ct-yes col-ranu-td">✓</td>
+          <td class="ct-partial">Varia</td>
+        </tr>
+        <tr>
+          <td>Custo mensal acessível</td>
+          <td class="ct-yes">✓</td>
+          <td class="ct-partial">+ assinatura</td>
+          <td class="ct-partial">Parcial</td>
+          <td class="ct-yes col-ranu-td">✓</td>
+          <td class="ct-no">✕ R$200–400</td>
+        </tr>
+        <tr>
+          <td>Disponível 24h, todo dia</td>
+          <td class="ct-yes">✓</td>
+          <td class="ct-yes">✓</td>
+          <td class="ct-yes">✓</td>
+          <td class="ct-yes col-ranu-td">✓</td>
+          <td class="ct-no">✕</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="margin-top:16px;font-size:12px;color:var(--text-3);font-family:var(--font-m);line-height:1.6;">
+      ¹ IAs genéricas podem gerar um plano, mas sem acesso ao seu histórico real de corridas, FC ou fadiga acumulada: é um chute educado.<br>
+      ² Sem memória persistente entre sessões na maioria dos serviços; cada conversa começa do zero.
+    </p>
+  </section>
+
+  <!-- CIÊNCIA -->
+  <section class="page-section" data-reveal>
+    <div class="sec-label">A base científica</div>
+    <h2 class="sec-h2">Metodologia que <span class="em">funciona.</span></h2>
+    <p class="sec-body">
+      O Ranü não inventou regras: aplica o que décadas de pesquisa em fisiologia do exercício
+      já provaram. A base inclui o modelo de polarização de treinamento (80/20), progressão de
+      volume por semana, zonas de frequência cardíaca baseadas em testes reais e protocolos de
+      recuperação e tapering validados.
+    </p>
+    <p class="sec-body" style="margin-top:16px">
+      Toda referência é rastreável. Estamos documentando as fontes para publicação
+      na plataforma, e você poderá verificar cada parâmetro no PubMed.
+    </p>
+    <div class="principles" style="margin-top:24px">
+      <div class="principle">
+        <div class="prin-num">80/20</div>
+        <div>
+          <div class="prin-title">Polarização de treinamento</div>
+          <p class="prin-desc">80% do volume em baixa intensidade (Z1-Z2), 20% em alta intensidade. Comprovadamente mais eficaz que treinamento na zona moderada.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="prin-num">10%</div>
+        <div>
+          <div class="prin-title">Regra de progressão semanal</div>
+          <p class="prin-desc">Aumento máximo de 10% no volume semanal para minimizar risco de lesão e permitir adaptação fisiológica progressiva.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="prin-num">FC</div>
+        <div>
+          <div class="prin-title">Zonas baseadas em teste real</div>
+          <p class="prin-desc">Fórmulas genéricas como "220 - idade" são imprecisas. O Ranü usa sua FC máxima real medida em teste específico para calibrar suas zonas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="page-cta" data-reveal>
+    <img src="./assets/Logo-04.png" alt="Ranü" style="height:64px;width:auto;display:block;margin:0 auto 32px;filter:drop-shadow(0 2px 20px rgba(148,202,85,.4));">
+    <h2>Pronto para correr com <span class="em">inteligência?</span></h2>
+    <p>14 dias grátis. Sem cartão de crédito. Cancele quando quiser.</p>
+    <a href="index.html#preco" class="btn-primary">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      Começar 14 dias grátis
+    </a>
+  </section>
+
+  <footer class="page-footer">
+    <span class="footer-copy">© 2026 Ranü. Todos os direitos reservados.</span>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;">
+      <a href="index.html">Início</a>
+      <a href="termos.html">Termos de uso</a>
+      <a href="privacidade.html">Privacidade</a>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    // Scroll reveal
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+  </script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

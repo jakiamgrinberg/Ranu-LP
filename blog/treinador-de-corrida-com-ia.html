@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O que é um treinador de corrida com IA (e como funciona) | Ranü</title>
+<meta name="description" content="Entenda como funciona um treinador de corrida com IA, o que ele faz, como se compara a uma assessoria presencial e quanto custa. Guia completo para 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #94CA55;
+    --green-dark: #7ab342;
+    --green-glow: rgba(148, 202, 85, 0.12);
+    --green-subtle: rgba(148, 202, 85, 0.06);
+    --bg: #0a0a0a;
+    --bg-card: #111111;
+    --bg-card-alt: #161616;
+    --border: #1e1e1e;
+    --border-light: #2a2a2a;
+    --text: #e0e0e0;
+    --text-muted: #888888;
+    --text-heading: #ffffff;
+    --radius: 12px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .nav-logo-icon { height: 32px; width: auto; }
+  .nav-cta {
+    background: var(--green);
+    color: #000;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--green-dark); }
+
+  /* HERO */
+  .hero {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 24px 48px;
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--green-glow);
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    border: 1px solid rgba(148, 202, 85, 0.15);
+  }
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 800;
+    color: var(--text-heading);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+  }
+  .hero-sub {
+    font-size: 18px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* ARTICLE */
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  article h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-heading);
+    margin: 56px 0 20px;
+    letter-spacing: -0.3px;
+  }
+
+  article h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-heading);
+    margin: 36px 0 12px;
+  }
+
+  article p {
+    margin-bottom: 20px;
+    color: var(--text);
+  }
+
+  article strong {
+    color: var(--text-heading);
+    font-weight: 600;
+  }
+
+  /* INTRO PARAGRAPH */
+  .intro {
+    font-size: 19px;
+    color: var(--text);
+    border-left: 3px solid var(--green);
+    padding-left: 20px;
+    margin-bottom: 32px;
+  }
+
+  /* NUMBERED FEATURES */
+  .feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 24px 0 32px;
+  }
+  .feature-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    transition: border-color 0.2s;
+  }
+  .feature-item:hover {
+    border-color: var(--border-light);
+  }
+  .feature-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--green-glow);
+    color: var(--green);
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(148, 202, 85, 0.15);
+  }
+  .feature-item h3 {
+    margin: 0 0 8px;
+    font-size: 17px;
+  }
+  .feature-item p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  /* FLOW STEPS */
+  .flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 24px 0 32px;
+    position: relative;
+  }
+  .flow::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 32px;
+    bottom: 32px;
+    width: 2px;
+    background: var(--border);
+  }
+  .flow-step {
+    display: flex;
+    gap: 20px;
+    padding: 16px 0;
+    position: relative;
+  }
+  .flow-dot {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    background: var(--bg);
+    border: 2px solid var(--green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+  .flow-dot-inner {
+    width: 10px;
+    height: 10px;
+    background: var(--green);
+    border-radius: 50%;
+  }
+  .flow-content h3 {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .flow-content p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* COMPARISON TABLE */
+  .table-wrapper {
+    overflow-x: auto;
+    margin: 24px 0 32px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    min-width: 600px;
+  }
+  thead {
+    background: var(--bg-card);
+  }
+  th {
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border);
+  }
+  th:first-child { border-radius: 12px 0 0 0; }
+  th:last-child { border-radius: 0 12px 0 0; }
+  th.highlight {
+    color: var(--green);
+    background: var(--green-subtle);
+  }
+  td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    vertical-align: top;
+  }
+  td:first-child {
+    font-weight: 500;
+    color: var(--text-heading);
+    white-space: nowrap;
+  }
+  td.highlight {
+    background: var(--green-subtle);
+    color: var(--text-heading);
+  }
+  tr:last-child td { border-bottom: none; }
+
+  /* CHECKLIST */
+  .checklist {
+    list-style: none;
+    margin: 20px 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .checklist li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 16px;
+  }
+  .check-icon {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    background: var(--green-glow);
+    border: 1px solid rgba(148, 202, 85, 0.2);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+    color: var(--green);
+    font-size: 12px;
+  }
+  .checklist li.negative .check-icon {
+    background: rgba(255, 80, 80, 0.08);
+    border-color: rgba(255, 80, 80, 0.15);
+    color: #ff5050;
+  }
+
+  /* QUESTION CARDS */
+  .question-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 24px 0 32px;
+  }
+  .question-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+  }
+  .question-card h3 {
+    font-size: 15px;
+    margin: 0 0 8px;
+    color: var(--green);
+    font-weight: 600;
+  }
+  .question-card p {
+    font-size: 15px;
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* CTA SECTION */
+  .cta-section {
+    background: linear-gradient(135deg, rgba(148, 202, 85, 0.08) 0%, rgba(148, 202, 85, 0.02) 100%);
+    border: 1px solid rgba(148, 202, 85, 0.15);
+    border-radius: 16px;
+    padding: 48px 32px;
+    text-align: center;
+    margin: 48px 0;
+  }
+  .cta-section h2 {
+    font-size: 24px;
+    margin: 0 0 12px;
+    color: var(--text-heading);
+  }
+  .cta-section p {
+    color: var(--text-muted);
+    font-size: 16px;
+    margin-bottom: 24px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-features {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .cta-feat {
+    font-size: 14px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .cta-feat .dot {
+    width: 6px;
+    height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+  }
+  .cta-button {
+    display: inline-block;
+    background: var(--green);
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 14px 36px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .cta-button:hover { background: var(--green-dark); transform: translateY(-1px); }
+  .cta-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 12px;
+  }
+
+  /* FAQ */
+  .faq {
+    margin: 48px 0 32px;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+  }
+  .faq-item:first-child { border-top: 1px solid var(--border); }
+  .faq-q {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-heading);
+    margin-bottom: 8px;
+  }
+  .faq-a {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  /* HIGHLIGHT QUOTE */
+  .highlight-quote {
+    background: var(--green-subtle);
+    border-left: 3px solid var(--green);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 20px 24px;
+    margin: 28px 0;
+    font-size: 17px;
+    color: var(--text-heading);
+    font-weight: 500;
+    line-height: 1.6;
+  }
+
+  /* FOOTER */
+  footer {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 48px;
+    font-size: 13px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+  }
+
+  /* READING PROGRESS */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--green);
+    z-index: 101;
+    width: 0%;
+    transition: width 0.1s;
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 48px 20px 32px; }
+    article { padding: 0 20px 48px; }
+    .cta-section { padding: 32px 20px; }
+    .cta-features { flex-direction: column; align-items: center; gap: 12px; }
+    .feature-item { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav>
+  <a href="../index.html" class="nav-logo"><img src="../assets/Logo-01.png" alt="Ranü" class="nav-logo-icon"></a>
+  <a href="../index.html" class="nav-cta">Começar grátis</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="hero-badge">Guia completo</span>
+  <h1>O que e um treinador de corrida com IA (e como funciona na pratica)</h1>
+  <p class="hero-sub">Entenda como funciona, o que diferencia de uma planilha ou assessoria, e para quem vale a pena.</p>
+</div>
+
+<article>
+
+  <!-- INTRO -->
+  <p class="intro">
+    Voce ja tentou seguir uma planilha de corrida da internet? Aquelas tabelas genericas que prescrevem "40min Z2 na terca, intervalado na quinta" sem saber se voce correu ontem, se dormiu mal ou se esta com dor no joelho?
+  </p>
+
+  <p>O problema nao e a planilha. E que ela nao te conhece.</p>
+
+  <p>Um treinador de corrida com IA resolve exatamente isso. Ele faz o que um assessor esportivo faz: monta seu plano, ajusta quando voce perde um treino, analisa como foi cada corrida e controla sua carga para voce nao se machucar. A diferenca e que custa uma fracao do preco e esta disponivel 24 horas por dia.</p>
+
+  <!-- 5 FUNCOES -->
+  <h2>O que um treinador de corrida com IA faz</h2>
+  <p>Um treinador com IA cumpre as mesmas 5 funcoes de um assessor esportivo humano:</p>
+
+  <div class="feature-list">
+    <div class="feature-item">
+      <div class="feature-number">1</div>
+      <h3>Monta um plano personalizado</h3>
+      <p>Nao e uma planilha pre-pronta para "corredores intermediarios". O plano e criado com base no seu nivel atual, seu objetivo (5K, 10K, meia maratona), quantos dias por semana voce pode treinar e seu historico recente.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-number">2</div>
+      <h3>Ajusta o plano em tempo real</h3>
+      <p>Perdeu o treino de terca? O plano se reorganiza para a semana nao acumular carga. Correu mais rapido que o esperado? O proximo treino reflete isso. Essa adaptacao continua e o que diferencia de qualquer planilha estatica.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-number">3</div>
+      <h3>Analisa cada treino</h3>
+      <p>Depois de cada corrida, a IA analisa seus dados: pace medio, variacao de pace, zonas de frequencia cardiaca, cadencia. Nao e um "parabens, voce correu!". E um feedback especifico: "seu pace caiu 15s/km nas ultimas 4 semanas, o treino de limiar esta funcionando".</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-number">4</div>
+      <h3>Controla sua carga</h3>
+      <p>O maior risco para corredores amadores e lesao por excesso. A IA monitora o volume semanal, a intensidade e a progressao para garantir que voce evolua sem se machucar. Se a carga subir rapido demais, ela ajusta.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-number">5</div>
+      <h3>Responde suas duvidas</h3>
+      <p>"Posso correr dois dias seguidos?", "O que e zona 2?", "Devo correr mais devagar no longao?". Em vez de procurar no Google e encontrar respostas contraditorias, voce pergunta direto para o treinador.</p>
+    </div>
+  </div>
+
+  <!-- COMO FUNCIONA -->
+  <h2>Como funciona na pratica</h2>
+
+  <div class="flow">
+    <div class="flow-step">
+      <div class="flow-dot"><div class="flow-dot-inner"></div></div>
+      <div class="flow-content">
+        <h3>Onboarding (5 minutos)</h3>
+        <p>Voce responde perguntas sobre seu perfil: ha quanto tempo corre, qual seu objetivo, quantos dias por semana treina, se tem alguma limitacao. Alguns apps fazem isso via formulario, outros via conversa natural.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-dot"><div class="flow-dot-inner"></div></div>
+      <div class="flow-content">
+        <h3>Geracao do plano</h3>
+        <p>Com base no seu perfil, a IA gera um plano estruturado com periodizacao (fases de base, construcao, especifico e taper). Cada semana tem treinos distribuidos por tipo: corrida facil, intervalado, tempo run, long run.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-dot"><div class="flow-dot-inner"></div></div>
+      <div class="flow-content">
+        <h3>Execucao + sync</h3>
+        <p>Voce corre com seu relogio ou app de GPS (Strava, Garmin, Apple Watch). Depois do treino, os dados sao sincronizados automaticamente.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-dot"><div class="flow-dot-inner"></div></div>
+      <div class="flow-content">
+        <h3>Feedback pos-treino</h3>
+        <p>A IA analisa os dados da corrida e te da um retorno especifico. Exemplo: "Seu treino de limiar pediu pace de 5:30/km e voce manteve 5:25/km. Boa execucao. Na proxima semana, vamos testar 5:20/km."</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-dot"><div class="flow-dot-inner"></div></div>
+      <div class="flow-content">
+        <h3>Ajuste do plano</h3>
+        <p>Se voce perdeu treinos, se o feedback indica fadiga, se os dados mostram que o pace nao esta evoluindo, o plano se adapta. Sem precisar avisar ninguem. Automatico.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPARATIVO -->
+  <h2>Treinador com IA vs. planilha vs. assessoria</h2>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Planilha gratis</th>
+          <th class="highlight">Treinador com IA</th>
+          <th>Assessoria presencial</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Personalizacao</td>
+          <td>Nenhuma</td>
+          <td class="highlight">Alta. Baseada nos seus dados</td>
+          <td>Alta. Baseada em observacao</td>
+        </tr>
+        <tr>
+          <td>Adaptacao</td>
+          <td>Nenhuma. Estatica</td>
+          <td class="highlight">Automatica a cada treino</td>
+          <td>Manual (depende do assessor)</td>
+        </tr>
+        <tr>
+          <td>Feedback</td>
+          <td>Nenhum</td>
+          <td class="highlight">Automatico por treino</td>
+          <td>Semanal ou quinzenal</td>
+        </tr>
+        <tr>
+          <td>Preco</td>
+          <td>Gratis</td>
+          <td class="highlight">R$15-60/mes</td>
+          <td>R$200-500/mes</td>
+        </tr>
+        <tr>
+          <td>Disponibilidade</td>
+          <td>Sempre (e um PDF)</td>
+          <td class="highlight">24/7</td>
+          <td>Horario marcado</td>
+        </tr>
+        <tr>
+          <td>Risco de lesao</td>
+          <td>Alto (sem controle)</td>
+          <td class="highlight">Baixo (monitoramento continuo)</td>
+          <td>Baixo (acompanhamento humano)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="highlight-quote">
+    O treinador com IA ocupa exatamente o espaco entre a planilha generica e a assessoria presencial: entrega personalizacao e adaptacao real por um preco acessivel.
+  </div>
+
+  <!-- PARA QUEM -->
+  <h2>Para quem vale a pena</h2>
+
+  <ul class="checklist">
+    <li>
+      <span class="check-icon">&#10003;</span>
+      <span><strong>Corredores que treinam sozinhos</strong> e querem evoluir com metodo, nao no feeling</span>
+    </li>
+    <li>
+      <span class="check-icon">&#10003;</span>
+      <span><strong>Quem nao pode pagar assessoria</strong> (R$200-500/mes) mas quer mais que uma planilha</span>
+    </li>
+    <li>
+      <span class="check-icon">&#10003;</span>
+      <span><strong>Quem usa Strava ou smartwatch</strong> e quer que esses dados sirvam para alguma coisa alem de um grafico bonito</span>
+    </li>
+    <li>
+      <span class="check-icon">&#10003;</span>
+      <span><strong>Quem esta se preparando para uma prova</strong> (5K, 10K, meia maratona) e quer um plano estruturado</span>
+    </li>
+    <li>
+      <span class="check-icon">&#10003;</span>
+      <span><strong>Quem ja se lesionou</strong> por seguir treinos genericos sem controle de carga</span>
+    </li>
+    <li class="negative">
+      <span class="check-icon">&#10007;</span>
+      <span>Atletas de elite que precisam de acompanhamento presencial e testes de laboratorio</span>
+    </li>
+    <li class="negative">
+      <span class="check-icon">&#10007;</span>
+      <span>Quem tem condicoes medicas que exigem supervisao profissional direta</span>
+    </li>
+  </ul>
+
+  <!-- O QUE OBSERVAR -->
+  <h2>O que observar ao escolher um</h2>
+  <p>Nem todo app que diz usar IA realmente adapta o treino. Perguntas para avaliar:</p>
+
+  <div class="question-cards">
+    <div class="question-card">
+      <h3>O plano se ajusta quando perco um treino?</h3>
+      <p>Se voce precisa recriar o plano manualmente, nao e adaptacao real.</p>
+    </div>
+    <div class="question-card">
+      <h3>Ele analisa os dados da minha corrida?</h3>
+      <p>Se o feedback e generico ("bom treino!"), a IA nao esta fazendo analise de verdade. Procure por analise de FC, pace e cadencia.</p>
+    </div>
+    <div class="question-card">
+      <h3>Integra com Strava ou meu relogio?</h3>
+      <p>Sem dados reais, a IA trabalha no escuro. A integracao com Strava ou smartwatch e essencial.</p>
+    </div>
+    <div class="question-card">
+      <h3>Qual a metodologia por tras?</h3>
+      <p>Usa periodizacao? Distribuicao polarizada (80/20)? Se o app nao consegue explicar a metodologia, desconfie.</p>
+    </div>
+    <div class="question-card">
+      <h3>Quanto custa?</h3>
+      <p>Treinadores com IA variam de R$15 a R$200/mes no Brasil. Preco alto nem sempre significa melhor. Compare features, nao so o nome.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section" id="cta">
+    <h2>Voce nunca teve um treinador. Agora tem.</h2>
+    <p>O Ranu foi construido para ser o treinador que a maioria dos corredores nunca teve.</p>
+    <div class="cta-features">
+      <span class="cta-feat"><span class="dot"></span>Planos personalizados do 5K a maratona</span>
+      <span class="cta-feat"><span class="dot"></span>Integracao automatica com Strava</span>
+      <span class="cta-feat"><span class="dot"></span>Feedback cientifico por treino</span>
+      <span class="cta-feat"><span class="dot"></span>R$19,90/mes</span>
+    </div>
+    <a href="#" class="cta-button">Comece gratis por 14 dias</a>
+    <p class="cta-sub">Sem cartao de credito. Cancele quando quiser.</p>
+  </div>
+
+  <!-- FAQ -->
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">Um treinador com IA substitui um assessor humano?</div>
+      <div class="faq-a">Para a maioria dos corredores amadores, sim. Ele entrega as mesmas funcoes (plano, adaptacao, feedback, controle de carga) por uma fracao do preco. Para atletas de elite, o acompanhamento presencial ainda faz sentido.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Preciso de smartwatch para usar?</div>
+      <div class="faq-a">Recomendamos usar um relogio com GPS ou o app do Strava no celular. Os dados de frequencia cardiaca e pace sao essenciais para o feedback funcionar bem.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">E se eu for iniciante completo?</div>
+      <div class="faq-a">Funciona perfeitamente. O onboarding identifica seu nivel e cria um plano para quem esta comecando, com progressao segura de caminhada para corrida.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Como a IA sabe que o treino foi bom ou ruim?</div>
+      <div class="faq-a">Ela analisa os dados objetivos: voce ficou nas zonas de FC planejadas? Manteve o pace alvo? A cadencia estava adequada? Completou o volume planejado? Com esses dados, o feedback e especifico, nao um chute.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Posso cancelar a qualquer momento?</div>
+      <div class="faq-a">Sim. Sem multa, sem burocracia.</div>
+    </div>
+  </div>
+
+</article>
+
+<footer>
+  <p>Artigo escrito pela equipe Ranu. Ultima atualizacao: marco de 2026.</p>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  const winScroll = document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  document.getElementById('progressBar').style.width = scrolled + '%';
+});
+</script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

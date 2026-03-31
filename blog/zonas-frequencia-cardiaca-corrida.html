@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zonas de Frequência Cardíaca na Corrida: Guia Completo | Ranü</title>
+<meta name="description" content="Entenda o que são as 5 zonas de frequência cardíaca, como calcular as suas com a fórmula de Tanaka e por que a maioria dos corredores treina na zona errada.">
+<link rel="canonical" href="https://ranu.app/blog/zonas-frequencia-cardiaca-corrida">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ranu.app/blog/zonas-frequencia-cardiaca-corrida">
+<meta property="og:title" content="Zonas de Frequência Cardíaca na Corrida: Guia Completo">
+<meta property="og:description" content="Entenda o que são as 5 zonas de FC, como calcular a sua FCmax e por que treinar nas zonas certas acelera sua evolução na corrida.">
+<meta property="og:image" content="https://ranu.app/assets/og-blog-zonas-fc.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zonas de Frequência Cardíaca na Corrida: Guia Completo">
+<meta name="twitter:description" content="As 5 zonas de FC explicadas. Como calcular a sua e por que isso muda tudo no treino.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Zonas de Frequência Cardíaca na Corrida: Guia Completo",
+  "description": "Entenda o que são as 5 zonas de frequência cardíaca, como calcular as suas com a fórmula de Tanaka e por que a maioria dos corredores treina na zona errada.",
+  "author": { "@type": "Organization", "name": "Ranü" },
+  "publisher": { "@type": "Organization", "name": "Ranü", "url": "https://ranu.app" },
+  "datePublished": "2026-03-27",
+  "dateModified": "2026-03-27",
+  "url": "https://ranu.app/blog/zonas-frequencia-cardiaca-corrida"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qual fórmula usar para calcular a frequência cardíaca máxima?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A fórmula de Tanaka é a mais validada cientificamente: FCmax = 208 - (0,7 × idade). Ela é mais precisa que a clássica '220 menos a idade', especialmente para adultos acima de 40 anos." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto tempo devo passar em cada zona por semana?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A distribuição ideal para corredores amadores é o modelo polarizado: cerca de 80% do volume total em Z1 e Z2, e 20% em Z4 e Z5. Pouco tempo em Z3 é o que a ciência recomenda." }
+    },
+    {
+      "@type": "Question",
+      "name": "Preciso de um monitor cardíaco para treinar por zonas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ajuda muito, mas não é obrigatório. Você pode estimar a zona pela percepção de esforço (RPE) ou pelo teste da fala: em Z2 você consegue conversar com frases completas; em Z4, apenas palavras soltas." }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que meu pace varia tanto em Z2 dependendo do dia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Isso é completamente normal. Fatores como calor, hidratação, sono e estresse elevam a FC para o mesmo esforço. Por isso treinar por FC (e não por pace) em Z2 é mais eficiente." }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #94CA55;
+    --green-dark: #7ab342;
+    --green-glow: rgba(148, 202, 85, 0.12);
+    --green-subtle: rgba(148, 202, 85, 0.06);
+    --bg: #0a0a0a;
+    --bg-card: #111111;
+    --bg-card-alt: #161616;
+    --border: #1e1e1e;
+    --border-light: #2a2a2a;
+    --text: #e0e0e0;
+    --text-muted: #888888;
+    --text-heading: #ffffff;
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo { display: flex; align-items: center; text-decoration: none; }
+  .nav-logo-icon { height: 32px; width: auto; }
+  .nav-cta { background: var(--green); color: #000; font-size: 13px; font-weight: 600; padding: 8px 20px; border-radius: 8px; text-decoration: none; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--green-dark); }
+  .hero { max-width: 720px; margin: 0 auto; padding: 80px 24px 48px; text-align: center; }
+  .hero-badge { display: inline-block; background: var(--green-glow); color: var(--green); font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 20px; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 24px; border: 1px solid rgba(148, 202, 85, 0.15); }
+  .hero h1 { font-size: clamp(28px, 5vw, 42px); font-weight: 800; color: var(--text-heading); line-height: 1.2; margin-bottom: 20px; letter-spacing: -0.5px; }
+  .hero-sub { font-size: 18px; color: var(--text-muted); line-height: 1.6; max-width: 560px; margin: 0 auto; }
+  article { max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+  article h2 { font-size: 26px; font-weight: 700; color: var(--text-heading); margin: 56px 0 20px; letter-spacing: -0.3px; }
+  article h3 { font-size: 20px; font-weight: 600; color: var(--text-heading); margin: 36px 0 12px; }
+  article p { margin-bottom: 20px; color: var(--text); }
+  article strong { color: var(--text-heading); font-weight: 600; }
+  .intro { font-size: 19px; color: var(--text); border-left: 3px solid var(--green); padding-left: 20px; margin-bottom: 32px; }
+  .feature-list { display: flex; flex-direction: column; gap: 16px; margin: 24px 0 32px; }
+  .feature-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: border-color 0.2s; }
+  .feature-item:hover { border-color: var(--border-light); }
+  .feature-number { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: var(--green-glow); color: var(--green); font-size: 14px; font-weight: 700; border-radius: 8px; margin-bottom: 12px; border: 1px solid rgba(148, 202, 85, 0.15); }
+  .feature-item h3 { margin: 0 0 8px; font-size: 17px; }
+  .feature-item p { margin: 0; font-size: 15px; color: var(--text-muted); line-height: 1.65; }
+  .zone-badge { display: inline-block; padding: 2px 10px; border-radius: 6px; font-size: 13px; font-weight: 700; margin-right: 8px; }
+  .z1 { background: rgba(59,130,246,0.15); color: #60a5fa; }
+  .z2 { background: rgba(34,197,94,0.15); color: #4ade80; }
+  .z3 { background: rgba(234,179,8,0.15); color: #facc15; }
+  .z4 { background: rgba(249,115,22,0.15); color: #fb923c; }
+  .z5 { background: rgba(239,68,68,0.15); color: #f87171; }
+  .table-wrapper { overflow-x: auto; margin: 24px 0 32px; border-radius: var(--radius); border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 500px; }
+  thead { background: var(--bg-card); }
+  th { padding: 14px 16px; text-align: left; font-weight: 600; color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--border); }
+  th.highlight { color: var(--green); background: var(--green-subtle); }
+  td { padding: 14px 16px; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: top; }
+  td:first-child { font-weight: 500; color: var(--text-heading); }
+  td.highlight { background: var(--green-subtle); color: var(--text-heading); }
+  tr:last-child td { border-bottom: none; }
+  .highlight-quote { background: var(--green-subtle); border-left: 3px solid var(--green); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 28px 0; font-size: 17px; color: var(--text-heading); font-weight: 500; line-height: 1.6; }
+  .checklist { list-style: none; margin: 20px 0 32px; display: flex; flex-direction: column; gap: 12px; }
+  .checklist li { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; }
+  .check-icon { width: 22px; height: 22px; min-width: 22px; background: var(--green-glow); border: 1px solid rgba(148, 202, 85, 0.2); border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-top: 2px; color: var(--green); font-size: 12px; }
+  .checklist li.negative .check-icon { background: rgba(255, 80, 80, 0.08); border-color: rgba(255, 80, 80, 0.15); color: #ff5050; }
+  .cta-section { background: linear-gradient(135deg, rgba(148, 202, 85, 0.08) 0%, rgba(148, 202, 85, 0.02) 100%); border: 1px solid rgba(148, 202, 85, 0.15); border-radius: 16px; padding: 48px 32px; text-align: center; margin: 48px 0; }
+  .cta-section h2 { font-size: 24px; margin: 0 0 12px; color: var(--text-heading); }
+  .cta-section p { color: var(--text-muted); font-size: 16px; margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .cta-features { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+  .cta-feat { font-size: 14px; color: var(--text); display: flex; align-items: center; gap: 6px; }
+  .cta-feat .dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; }
+  .cta-button { display: inline-block; background: var(--green); color: #000; font-size: 16px; font-weight: 700; padding: 14px 36px; border-radius: 10px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+  .cta-button:hover { background: var(--green-dark); transform: translateY(-1px); }
+  .cta-sub { font-size: 13px; color: var(--text-muted); margin-top: 12px; }
+  .faq { margin: 48px 0 32px; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-item:first-child { border-top: 1px solid var(--border); }
+  .faq-q { font-size: 16px; font-weight: 600; color: var(--text-heading); margin-bottom: 8px; }
+  .faq-a { font-size: 15px; color: var(--text-muted); line-height: 1.65; }
+  .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--green); z-index: 101; width: 0%; transition: width 0.1s; }
+  footer { max-width: 720px; margin: 0 auto; padding: 24px 24px 48px; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border); }
+  .internal-link { color: var(--green); text-decoration: none; border-bottom: 1px solid rgba(148,202,85,0.3); transition: border-color 0.2s; }
+  .internal-link:hover { border-color: var(--green); }
+  @media (max-width: 640px) {
+    .hero { padding: 48px 20px 32px; }
+    article { padding: 0 20px 48px; }
+    .cta-section { padding: 32px 20px; }
+    .cta-features { flex-direction: column; align-items: center; gap: 12px; }
+    .feature-item { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav>
+  <a href="../index.html" class="nav-logo"><img src="../assets/Logo-01.png" alt="Ranü" class="nav-logo-icon"></a>
+  <a href="../index.html" class="nav-cta">Começar grátis</a>
+</nav>
+
+<div class="hero">
+  <span class="hero-badge">Fisiologia do treino</span>
+  <h1>Zonas de Frequência Cardíaca na Corrida: Guia Completo para Treinar Certo</h1>
+  <p class="hero-sub">O que são as 5 zonas, como calcular a sua frequência cardíaca máxima e por que treinar na zona errada é o erro mais comum entre corredores amadores.</p>
+</div>
+
+<article>
+
+  <p class="intro">
+    Se você já correu com um smartwatch, provavelmente viu o número batendo lá em cima enquanto se esforçava mais. Mas saber que sua FC está em 172bpm não diz muita coisa. A pergunta certa é: essa frequência corresponde ao estímulo que você quer dar ao seu corpo hoje?
+  </p>
+
+  <p>Treinar por zonas de frequência cardíaca é a maneira mais objetiva de controlar a intensidade do esforço. Não importa se está calor, se você dormiu mal ou se a semana foi pesada. Sua FC reflete o estado real do seu corpo naquele momento. Veja como usar isso a seu favor.</p>
+
+  <h2>O que são zonas de frequência cardíaca</h2>
+
+  <p>As zonas de FC dividem o espectro de intensidade do exercício aeróbico em faixas. Cada faixa corresponde a uma resposta fisiológica diferente: o que acontece com seu coração, seus músculos, seu metabolismo e o que seu corpo usa como combustível.</p>
+
+  <p>A maioria dos sistemas usa 5 zonas, numeradas de Z1 (recuperação) a Z5 (esforço máximo). Cada zona é definida como uma porcentagem da sua frequência cardíaca máxima (FCmax).</p>
+
+  <div class="highlight-quote">
+    As zonas não são arbitrárias. Elas refletem limiares fisiológicos reais onde o corpo muda de estratégia energética e recruta diferentes fibras musculares.
+  </div>
+
+  <h2>As 5 zonas de frequência cardíaca e o que cada uma significa</h2>
+
+  <div class="feature-list">
+    <div class="feature-item">
+      <div class="feature-number"><span class="zone-badge z1">Z1</span></div>
+      <h3>Zona 1: Recuperação ativa (50-60% FCmax)</h3>
+      <p>Esforço mínimo. Seu corpo usa principalmente gordura como combustível. Usada em dias de recuperação entre treinos mais intensos. Você consegue conversar normalmente sem esforço algum. Muitos corredores ignoram essa zona por achar que "não faz nada". Faz: ela acelera a recuperação muscular e mantém o volume sem adicionar estresse.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-number"><span class="zone-badge z2">Z2</span></div>
+      <h3>Zona 2: Aeróbico leve (60-70% FCmax)</h3>
+      <p>A zona mais importante da corrida. Também chamada de limiar aeróbico, é onde você desenvolve a base aeróbica: capilarização muscular, densidade mitocondrial, eficiência na queima de gordura. Você consegue falar em frases completas. Parece fácil demais, e é exatamente isso. A maioria dos corredores não passa tempo suficiente aqui. Leia o artigo sobre <a href="/blog/treino-polarizado-80-20-corrida" class="internal-link">treino polarizado</a> para entender por que 80% do seu volume deveria estar em Z1/Z2.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-number"><span class="zone-badge z3">Z3</span></div>
+      <h3>Zona 3: Aeróbico moderado (70-80% FCmax)</h3>
+      <p>O "vale da morte" do treino de corrida. É cansativo o suficiente para atrapalhar a recuperação, mas não intenso o suficiente para criar o estímulo adaptativo do treino de alta intensidade. Você consegue falar, mas em frases curtas. Surpreendentemente, é a zona em que a maioria dos corredores amadores passa mais tempo por default. O resultado: treinos medianos e progresso lento.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-number"><span class="zone-badge z4">Z4</span></div>
+      <h3>Zona 4: Limiar anaeróbico (80-90% FCmax)</h3>
+      <p>O limiar de lactato: o ponto onde a produção de lactato supera a capacidade de remoção. É a zona dos tempo runs e trechos de intervalado mais longos. Você consegue dizer apenas palavras soltas. Intenso, mas sustentável por 20-40 minutos em atletas treinados. Treinar aqui aumenta diretamente sua velocidade de prova em distâncias de 5K a meia maratona.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-number"><span class="zone-badge z5">Z5</span></div>
+      <h3>Zona 5: Máximo (90-100% FCmax)</h3>
+      <p>Esforço máximo. Não consegue falar. Usado em repetições curtas de intervalado (200-400m), fartlek intenso e sprints. Recruta fibras de contração rápida e melhora o VO2max. Nunca deve durar mais que alguns minutos por repetição. Requer recuperação completa entre estímulos e dias de descanso após a sessão.</p>
+    </div>
+  </div>
+
+  <h2>Como calcular suas zonas de frequência cardíaca</h2>
+
+  <p>Tudo começa pela sua frequência cardíaca máxima (FCmax). A partir dela, as zonas são calculadas como percentuais.</p>
+
+  <h3>Fórmula de Tanaka (a mais precisa)</h3>
+
+  <p>A fórmula clássica "220 menos a idade" tem erro de 10-12 bpm para a maioria das pessoas. A fórmula de Tanaka, validada em 2001 com mais de 350 estudos, é mais confiável:</p>
+
+  <div class="highlight-quote">
+    FCmax = 208 - (0,7 x sua idade)
+  </div>
+
+  <p>Exemplo para um corredor de 35 anos: FCmax = 208 - (0,7 x 35) = 208 - 24,5 = <strong>183 bpm</strong></p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Zona</th>
+          <th>% FCmax</th>
+          <th class="highlight">BPM (FCmax 183)</th>
+          <th>Tipo de treino</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="zone-badge z1">Z1</span> Recuperação</td><td>50-60%</td><td class="highlight">92-110 bpm</td><td>Caminhada, trote leve</td></tr>
+        <tr><td><span class="zone-badge z2">Z2</span> Aeróbico leve</td><td>60-70%</td><td class="highlight">110-128 bpm</td><td>Long run, easy run</td></tr>
+        <tr><td><span class="zone-badge z3">Z3</span> Moderado</td><td>70-80%</td><td class="highlight">128-146 bpm</td><td>Corrida contínua média</td></tr>
+        <tr><td><span class="zone-badge z4">Z4</span> Limiar</td><td>80-90%</td><td class="highlight">146-165 bpm</td><td>Tempo run, intervalado longo</td></tr>
+        <tr><td><span class="zone-badge z5">Z5</span> Máximo</td><td>90-100%</td><td class="highlight">165-183 bpm</td><td>Repetições curtas, sprint</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Teste de campo (mais preciso que a fórmula)</h3>
+
+  <p>Se você quer a FCmax real, não a estimada, precisa fazer um teste de campo. A forma mais simples: após aquecimento de 15 minutos, corra 3 minutos no limite, recupere 2 minutos, e corra mais 3 minutos no limite absoluto. O pico registrado é sua FCmax real.</p>
+
+  <p><strong>Atenção:</strong> consulte um médico antes de realizar testes de esforço máximo, especialmente se você é iniciante ou tem histórico cardiovascular.</p>
+
+  <h2>Por que a maioria dos corredores treina na zona errada</h2>
+
+  <p>Pesquisas mostram que corredores amadores passam em média 70-80% do tempo de treino em Z3, a zona moderada. O problema: Z3 é intenso o suficiente para acumular fadiga, mas não intenso o suficiente para criar as adaptações fisiológicas máximas.</p>
+
+  <p>O resultado é o que os treinadores chamam de "trap do meio": você se cansa nos treinos, leva mais dias para recuperar, e não vê evolução no pace nem na resistência. Parece que está trabalhando duro. Mas o estímulo é errado.</p>
+
+  <div class="highlight-quote">
+    80% dos seus quilômetros deveriam parecer quase fáceis. Se você sai de todo treino destruído, está treinando na zona errada.
+  </div>
+
+  <h2>Como saber sua zona durante a corrida sem monitor</h2>
+
+  <p>O "teste da fala" é surpreendentemente confiável:</p>
+
+  <ul class="checklist">
+    <li>
+      <span class="check-icon">✓</span>
+      <span><strong>Z1/Z2:</strong> Você consegue ter uma conversa normal. Faz frases completas. Parece fácil demais.</span>
+    </li>
+    <li>
+      <span class="check-icon">✓</span>
+      <span><strong>Z3:</strong> Consegue falar, mas a voz sai um pouco entrecortada. Frases curtas.</span>
+    </li>
+    <li>
+      <span class="check-icon">✓</span>
+      <span><strong>Z4:</strong> Consegue dizer poucas palavras. "Tô... bem..." é o limite.</span>
+    </li>
+    <li>
+      <span class="check-icon">✓</span>
+      <span><strong>Z5:</strong> Não consegue falar. Você está no limite.</span>
+    </li>
+  </ul>
+
+  <h2>Frequência cardíaca x pace: qual controlar?</h2>
+
+  <p>O pace é constante. A FC, não. Em um dia quente, com pouco sono ou no final de um bloco de treinos pesado, sua FC vai estar mais alta para o mesmo ritmo. Se você treinar por pace nesses dias, vai entrar em Z3/Z4 sem perceber.</p>
+
+  <p>Para corridas de baixa intensidade (easy run, long run), <strong>controle pela FC</strong>. Aceite que o pace vai variar. Para treinos de qualidade (intervalado, tempo run), o pace pode ser o guia, desde que a FC confirme que você está na zona certa.</p>
+
+  <!-- CTA SECTION -->
+  <div class="cta-section" id="cta">
+    <h2>O Ranü calcula e monitora suas zonas automaticamente</h2>
+    <p>Com base na sua FCmax e nos dados do Strava, o Ranü identifica em qual zona você treinou e ajusta seu plano de acordo. Sem planilha, sem cálculo manual.</p>
+    <div class="cta-features">
+      <span class="cta-feat"><span class="dot"></span> Zonas calibradas pela fórmula de Tanaka</span>
+      <span class="cta-feat"><span class="dot"></span> Análise pós-treino automática</span>
+      <span class="cta-feat"><span class="dot"></span> Integração com Strava</span>
+    </div>
+    <a href="/#cta" class="cta-button">Começar 14 dias grátis</a>
+    <p class="cta-sub">Sem cartão de crédito. Cancela quando quiser.</p>
+  </div>
+
+  <h2>Perguntas frequentes sobre zonas de FC</h2>
+
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">Qual fórmula usar para calcular a frequência cardíaca máxima?</div>
+      <div class="faq-a">A fórmula de Tanaka é a mais validada cientificamente: FCmax = 208 - (0,7 x idade). Ela é mais precisa que a clássica "220 menos a idade", especialmente para adultos acima de 40 anos.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Quanto tempo devo passar em cada zona por semana?</div>
+      <div class="faq-a">A distribuição ideal para corredores amadores é o modelo polarizado: cerca de 80% do volume total em Z1 e Z2, e 20% em Z4 e Z5. Muito tempo em Z3 é o erro mais comum e o que freia a evolução.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Preciso de um monitor cardíaco para treinar por zonas?</div>
+      <div class="faq-a">Ajuda muito, mas não é obrigatório. Você pode usar o teste da fala como guia. Para treinos de qualidade, um monitor cardíaco de pulso (GPS watch) ou cinta torácica dá resultados mais confiáveis.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Por que meu pace varia tanto em Z2 dependendo do dia?</div>
+      <div class="faq-a">É completamente normal. Fatores como calor, hidratação, sono e estresse elevam a FC para o mesmo esforço. Por isso treinar por FC em Z2 é mais eficiente do que treinar por pace fixo.</div>
+    </div>
+  </div>
+
+</article>
+
+<footer>
+  Artigo escrito pela equipe Ranü. Última atualização: março de 2026. | <a href="/blog" style="color: var(--text-muted);">Blog</a> | <a href="/" style="color: var(--text-muted);">ranu.app</a>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const el = document.getElementById('progressBar');
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    el.style.width = (window.scrollY / h * 100) + '%';
+  });
+</script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

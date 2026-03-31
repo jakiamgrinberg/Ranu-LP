@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Ranü — Treinador de Corrida com IA</title>
+<meta name="description" content="Artigos sobre corrida, treino com IA, metodologia e performance. Conteúdo prático para corredores que querem evoluir com método.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ranu.app/blog">
+<link rel="icon" type="image/png" href="../assets/Logo-04.png">
+<!-- Open Graph -->
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://ranu.app/blog">
+<meta property="og:site_name"   content="Ranü">
+<meta property="og:title"       content="Blog Ranü — Corrida, Ciência e Treinamento com IA">
+<meta property="og:description" content="Artigos sobre corrida, treino com IA, metodologia e performance para corredores que querem evoluir com método.">
+<meta property="og:image"       content="https://ranu.app/assets/og-image.png">
+<meta property="og:locale"      content="pt_BR">
+<!-- Twitter Card -->
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="Blog Ranü — Corrida, Ciência e Treinamento com IA">
+<meta name="twitter:description" content="Artigos sobre corrida, treino com IA, metodologia e performance.">
+<meta name="twitter:image"       content="https://ranu.app/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #94CA55;
+    --green-dark: #7ab342;
+    --green-glow: rgba(148, 202, 85, 0.12);
+    --green-subtle: rgba(148, 202, 85, 0.06);
+    --bg: #0a0a0a;
+    --bg-card: #111111;
+    --border: #1e1e1e;
+    --border-light: #2a2a2a;
+    --text: #e0e0e0;
+    --text-muted: #888888;
+    --text-heading: #ffffff;
+    --radius: 12px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .nav-logo-icon {
+    height: 32px;
+    width: auto;
+  }
+  .nav-cta {
+    background: var(--green);
+    color: #000;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--green-dark); }
+
+  /* HEADER */
+  .blog-header {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 24px 48px;
+    text-align: center;
+  }
+  .blog-header h1 {
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 800;
+    color: var(--text-heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+  }
+  .blog-header p {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* POST GRID */
+  .posts {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .post-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    text-decoration: none;
+    transition: border-color 0.2s, transform 0.15s;
+    display: block;
+  }
+  .post-card:hover {
+    border-color: var(--border-light);
+    transform: translateY(-2px);
+  }
+
+  .post-badge {
+    display: inline-block;
+    background: var(--green-glow);
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    border: 1px solid rgba(148, 202, 85, 0.15);
+  }
+
+  .post-card h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-heading);
+    line-height: 1.3;
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+  }
+
+  .post-card p {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .post-meta {
+    font-size: 13px;
+    color: var(--text-muted);
+    display: flex;
+    gap: 16px;
+  }
+
+  /* FOOTER */
+  footer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px 48px;
+    font-size: 13px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    text-align: center;
+  }
+  footer a {
+    color: var(--green);
+    text-decoration: none;
+  }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 640px) {
+    .blog-header { padding: 48px 20px 32px; }
+    .posts { padding: 0 20px 48px; }
+    .post-card { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo"><img src="../assets/Logo-01.png" alt="Ranü" class="nav-logo-icon"></a>
+  <a href="../index.html" class="nav-cta">Começar grátis</a>
+</nav>
+
+<div class="blog-header">
+  <h1>Blog</h1>
+  <p>Conteúdo prático sobre corrida, treino com IA e performance para corredores que querem evoluir com método.</p>
+</div>
+
+<div class="posts">
+
+  <a href="/blog/comecar-a-correr-do-zero-guia-iniciantes" class="post-card">
+    <span class="post-badge">Iniciantes</span>
+    <h2>Como Começar a Correr do Zero: O Guia Definitivo para Quem Nunca Correu</h2>
+    <p>O método Run/Walk, a progressão que funciona e os erros que fazem 80% dos iniciantes desistir antes do terceiro mês.</p>
+    <div class="post-meta">
+      <span>Março 2026</span>
+      <span>9 min de leitura</span>
+    </div>
+  </a>
+
+  <a href="/blog/plano-corrida-meia-maratona-12-semanas" class="post-card">
+    <span class="post-badge">Plano de treino</span>
+    <h2>Plano de Corrida para Meia Maratona: Como Estruturar 12 Semanas do Zero</h2>
+    <p>As 4 fases da periodização, os tipos de treino essenciais e os erros que levam à lesão. Um guia para corredores que querem completar ou melhorar o tempo na meia.</p>
+    <div class="post-meta">
+      <span>Março 2026</span>
+      <span>10 min de leitura</span>
+    </div>
+  </a>
+
+  <a href="/blog/treino-polarizado-80-20-corrida" class="post-card">
+    <span class="post-badge">Metodologia</span>
+    <h2>Treino Polarizado: O Método 80/20 para Corredores (e por que funciona)</h2>
+    <p>Por que correr 80% do tempo em ritmo fácil e concentrar apenas 20% em alta intensidade é a abordagem mais eficiente, com base em décadas de pesquisa.</p>
+    <div class="post-meta">
+      <span>Março 2026</span>
+      <span>8 min de leitura</span>
+    </div>
+  </a>
+
+  <a href="/blog/zonas-frequencia-cardiaca-corrida" class="post-card">
+    <span class="post-badge">Fisiologia</span>
+    <h2>Zonas de Frequência Cardíaca na Corrida: Guia Completo para Treinar Certo</h2>
+    <p>O que são as 5 zonas, como calcular a sua FCmax e por que treinar na zona errada é o erro mais comum entre corredores amadores.</p>
+    <div class="post-meta">
+      <span>Março 2026</span>
+      <span>7 min de leitura</span>
+    </div>
+  </a>
+
+  <a href="/blog/como-usar-strava-para-melhorar-corrida" class="post-card">
+    <span class="post-badge">Ferramentas</span>
+    <h2>Como Usar o Strava para Melhorar sua Corrida (Além do Mapa e do Pace)</h2>
+    <p>As métricas que a maioria dos corredores ignora no Strava e como usar os dados para evoluir de verdade. Suffer Score, Fitness & Freshness e muito mais.</p>
+    <div class="post-meta">
+      <span>Março 2026</span>
+      <span>7 min de leitura</span>
+    </div>
+  </a>
+
+  <a href="/blog/treinador-de-corrida-com-ia" class="post-card">
+    <span class="post-badge">Guia completo</span>
+    <h2>O que é um treinador de corrida com IA (e como funciona na prática)</h2>
+    <p>Entenda como funciona, o que diferencia de uma planilha ou assessoria, e para quem vale a pena. Com tabela comparativa de preço, features e disponibilidade.</p>
+    <div class="post-meta">
+      <span>Março 2026</span>
+      <span>8 min de leitura</span>
+    </div>
+  </a>
+
+</div>
+
+<footer>
+  <p><a href="../index.html">Ranü</a> — Assistente inteligente para corredores</p>
+</footer>
+
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
